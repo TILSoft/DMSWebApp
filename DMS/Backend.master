@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" CodeFile="Backend.master.vb" Inherits="Backend" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>TIL DMS Admin</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div> 
+    
+     <asp:Label ID="lblErrorMessage" runat="server" Text="Label" ForeColor ="Red"></asp:Label>
+        <br />
+        <table class="style1">
+            <tr>
+                <td class="style2" valign="top">
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                    </asp:TreeView>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </td>
+                <td valign="top">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+      
+        
+                </td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+        
+      
+        
+    </div>
+    </form>
+</body>
+</html>

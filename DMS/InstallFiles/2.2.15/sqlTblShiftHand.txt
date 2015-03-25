@@ -1,0 +1,21 @@
+﻿USE [Downtime090603]
+GO
+/****** Object:  Table [dbo].[tblShiftHand]    Script Date: 07/06/2009 18:37:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tblShiftHand](
+	[ShiftHandoverID] [int] IDENTITY(1,1) NOT NULL,
+	[LineID] [int] NULL,
+	[UserID] [int] NULL,
+	[EntryTime] [datetime] NULL,
+	[field1] [nvarchar](2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[field2] [nvarchar](2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[field3] [nvarchar](2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[field4] [nvarchar](2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+ CONSTRAINT [PK_tblShiftHand] PRIMARY KEY CLUSTERED 
+(
+	[ShiftHandoverID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]

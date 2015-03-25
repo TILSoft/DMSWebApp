@@ -1,0 +1,511 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/Backend.master" AutoEventWireup="false"
+    CodeFile="ManageSymptomLocations.aspx.vb" Inherits="zAdministration_ManageSymptomLocations"
+    Title="Untitled Page" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 50%;
+            height: 657px;
+        }
+        .style3
+        {
+            height: 657px;
+        }
+        .style4
+        {
+            width: 50%;
+            height: 34px;
+        }
+        .style5
+        {
+            height: 34px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </cc1:ToolkitScriptManager>
+    <table class="style1">
+        <tr>
+            <td class="style4" valign="top">
+            </td>
+            <td valign="top" class="style5">
+            </td>
+        </tr>
+        <tr>
+            <td class="style2" valign="top">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:TreeView ID="TreeView1" runat="server">
+                            <SelectedNodeStyle BackColor="Yellow" />
+                        </asp:TreeView>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </td>
+            <td valign="top" class="style3">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <cc1:TabContainer ID="TabContainer1" runat="server" 
+    ActiveTabIndex="1"
+                    Width="100%">
+                            <cc1:TabPanel runat="server" HeaderText="Manage Locations" ID="TabPanel1">
+                                <ContentTemplate>
+                                    <asp:FormView ID="FormView1" runat="server" DataKeyNames="LocID" DataSourceID="ObjectDataSource1"
+                                DefaultMode="Edit">
+                                        <EditItemTemplate>
+                                            <table class="style1">
+                                                <tr>
+                                                    <td width="50%" colspan="2">
+                                                        Edit A Location</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        Location ID</td>
+                                                    <td>
+                                                        <asp:Label ID="LocIDLabel1" runat="server" Text='<%# Eval("LocID") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Description</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LocDescriptionTextBox" runat="server" 
+                                                            Text='<%# Bind("LocDescription") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Parent ID</td>
+                                                    <td>
+                                                        <asp:TextBox ID="ParentLocIDTextBox" runat="server" Enabled="False" 
+                                                            Text='<%# Bind("ParentLocID") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Downtime&nbsp; Type</td>
+                                                    <td>
+                                                        <asp:TextBox ID="DowntimeIDTextBox" runat="server" 
+                                                            Text='<%# Bind("DowntimeID") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Lot Status</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LotStatusTextBox" runat="server" Enabled="False" 
+                                                            Text='<%# Bind("LotStatus") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Enabled</td>
+                                                    <td>
+                                                        <asp:CheckBox ID="LocationEnabledCheckBox" runat="server" 
+                                                            Checked='<%# Bind("LocationEnabled") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Location Status</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LocationStatusTextBox" runat="server" 
+                                                            Text='<%# Bind("LocationStatus") %>' />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
+                                        Text="Update" />
+                                            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False"
+                                        CommandName="Cancel" Text="Cancel" />
+                                            <br />
+                                            <br />
+                                            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Insert 
+                                            a New Location</asp:LinkButton>
+                                        </EditItemTemplate>
+                                        <InsertItemTemplate>
+                      <table class="style1">
+                                                
+                                                <tr>
+                                                    <td colspan="2">
+                                                        Insert a New Location</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Description</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LocDescriptionTextBox" runat="server" 
+                                                            Text='<%# Bind("LocDescription") %>' />
+                                                    </td>
+                                                </tr>
+                                         <%--       <tr>
+                                                    <td>
+                                                        Parent ID</td>
+                                                    <td>
+                                                        <asp:TextBox ID="ParentLocIDTextBox" runat="server" Enabled="True" 
+                                                            Text='<%# Bind("ParentLocID") %>' />
+                                                    </td>
+                                                </tr>--%>
+                                                <tr>
+                                                    <td>
+                                                        Downtime&nbsp; Type</td>
+                                                    <td>
+                                                        <asp:TextBox ID="DowntimeIDTextBox" runat="server" 
+                                                            Text='<%# Bind("DowntimeID") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Lot Status</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LotStatusTextBox" runat="server" Enabled="False" 
+                                                            Text='<%# Bind("LotStatus") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Enabled</td>
+                                                    <td>
+                                                        <asp:CheckBox ID="LocationEnabledCheckBox" runat="server" 
+                                                            Checked='<%# Bind("LocationEnabled") %>' />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Location Status</td>
+                                                    <td>
+                                                        <asp:TextBox ID="LocationStatusTextBox" runat="server" 
+                                                            Text='<%# Bind("LocationStatus") %>' />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
+                                        Text="Insert" onclick="InsertButton_Click" />
+                                            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False"
+                                        CommandName="Cancel" Text="Cancel" />
+                                            <br />
+                                            <br />
+                                            <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click">Edit 
+                                            Selected Location</asp:LinkButton>
+                                        </InsertItemTemplate>
+                                        <ItemTemplate>
+                                            LocID:
+                                            <asp:Label ID="LocIDLabel" runat="server" Text='<%# Eval("LocID") %>' />
+                                            <br />
+                                            LocDescription:
+                                            <asp:Label ID="LocDescriptionLabel" runat="server" Text='<%# Bind("LocDescription") %>' />
+                                            <br />
+                                            ParentLocID:
+                                            <asp:Label ID="ParentLocIDLabel" runat="server" Text='<%# Bind("ParentLocID") %>' />
+                                            <br />
+                                            DowntimeID:
+                                            <asp:Label ID="DowntimeIDLabel" runat="server" Text='<%# Bind("DowntimeID") %>' />
+                                            <br />
+                                            LotStatus:
+                                            <asp:Label ID="LotStatusLabel" runat="server" Text='<%# Bind("LotStatus") %>' />
+                                            <br />
+                                            LocationEnabled:
+                                            <asp:CheckBox ID="LocationEnabledCheckBox" runat="server" Checked='<%# Bind("LocationEnabled") %>'
+                                        Enabled="false" />
+                                            <br />
+                                            LocationStatus:
+                                            <asp:Label ID="LocationStatusLabel" runat="server" Text='<%# Bind("LocationStatus") %>' />
+                                            <br />
+                                            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
+                                        Text="Edit" />
+                                            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete"
+                                        Text="Delete" />
+                                            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New"
+                                        Text="New" />
+                                        </ItemTemplate>
+                                    </asp:FormView>
+                                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete"
+                                InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByLocID"
+                                TypeName="LocationsTableAdapters.tblLocTableAdapter" UpdateMethod="Update">
+                                        <DeleteParameters>
+                                            <asp:Parameter Name="Original_LocID" Type="Int32" />
+                                        </DeleteParameters>
+                                        <InsertParameters>
+                                            <asp:Parameter Name="LocDescription" Type="String" />
+                                            <asp:Parameter Name="ParentLocID" Type="Int32" />
+                                            <asp:Parameter Name="DowntimeID" Type="Int32" />
+                                            <asp:Parameter Name="LotStatus" Type="Int32" />
+                                            <asp:Parameter Name="LocationEnabled" Type="Boolean" />
+                                            <asp:Parameter Name="LocationStatus" Type="Int32" />
+                                        </InsertParameters>
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="TreeView1" DefaultValue="161" Name="locid" 
+                                                PropertyName="SelectedValue" Type="Int32" />
+                                        </SelectParameters>
+                                        <UpdateParameters>
+                                            <asp:Parameter Name="LocDescription" Type="String" />
+                                            <asp:Parameter Name="ParentLocID" Type="Int32" />
+                                            <asp:Parameter Name="DowntimeID" Type="Int32" />
+                                            <asp:Parameter Name="LotStatus" Type="Int32" />
+                                            <asp:Parameter Name="LocationEnabled" Type="Boolean" />
+                                            <asp:Parameter Name="LocationStatus" Type="Int32" />
+                                            <asp:Parameter Name="Original_LocID" Type="Int32" />
+                                        </UpdateParameters>
+                                    </asp:ObjectDataSource>
+                                </ContentTemplate>
+                            </cc1:TabPanel>
+                            <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Symptoms for Location">
+                                <ContentTemplate>
+                                    <table class="style1">
+                                        <tr>
+                                            <td>
+                                                <h5>
+                                                    Review this locations symptoms</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
+                                                    AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="SymptomID" 
+                                                    DataSourceID="ObjectDataSource2">
+                                                    <Columns>
+                                                        <asp:CommandField ShowSelectButton="True" />
+                                                        <asp:BoundField DataField="SymptomDesc" HeaderText="Symptom" 
+                                                            SortExpression="SymptomDesc" />
+                                                        <asp:CheckBoxField DataField="SymptomEnabled" HeaderText="Enabled" 
+                                                            SortExpression="SymptomEnabled" />
+                                                        <asp:BoundField DataField="DTType" HeaderText="Downtime Type" 
+                                                            SortExpression="DTType" />
+                                                    </Columns>
+                                                </asp:GridView>
+                                                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                                                    DeleteMethod="Delete" InsertMethod="Insert" 
+                                                    OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByLocID" 
+                                                    TypeName="LocationsTableAdapters.tblSymptomTableAdapter" UpdateMethod="Update">
+                                                    <DeleteParameters>
+                                                        <asp:Parameter Name="Original_SymptomID" Type="Int32" />
+                                                    </DeleteParameters>
+                                                    <InsertParameters>
+                                                        <asp:Parameter Name="SymptomDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="DTType" Type="Int32" />
+                                                        <asp:Parameter Name="SymptomEnabled" Type="Boolean" />
+                                                    </InsertParameters>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="TreeView1" Name="LocID" 
+                                                            PropertyName="SelectedValue" Type="Int32" />
+                                                    </SelectParameters>
+                                                    <UpdateParameters>
+                                                        <asp:Parameter Name="SymptomDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="DTType" Type="Int32" />
+                                                        <asp:Parameter Name="SymptomEnabled" Type="Boolean" />
+                                                        <asp:Parameter Name="Original_SymptomID" Type="Int32" />
+                                                    </UpdateParameters>
+                                                </asp:ObjectDataSource>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                &nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>
+                                                    &nbsp;</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:FormView ID="FormView2" runat="server" DataKeyNames="SymptomID" 
+                                                    DataSourceID="ObjectDataSource3" DefaultMode="Edit">
+                                                    <EditItemTemplate>
+                                                        <h5>
+                                                            Edit&nbsp;Symptom</h5>
+                                                        <table class="style1">
+                                                            <tr>
+                                                                <td style="width: 50%">
+                                                                    Symptom ID</td>
+                                                                <td>
+                                                                    <asp:Label ID="SymptomIDLabel1" runat="server" 
+                                                                        Text='<%# Eval("SymptomID") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Description</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="SymptomDescTextBox" runat="server" 
+                                                                        Text='<%# Bind("SymptomDesc") %>' Width="436px" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Loc ID</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" 
+                                                                        Text='<%# Bind("LocID") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    DT Type</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="DTTypeTextBox" runat="server" Text='<%# Bind("DTType") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Enabled</td>
+                                                                <td>
+                                                                    <asp:CheckBox ID="SymptomEnabledCheckBox" runat="server" 
+                                                                        Checked='<%# Bind("SymptomEnabled") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    &nbsp;</td>
+                                                                <td>
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+                                                        <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                                                            CommandName="Update" Text="Update" />
+                                                        &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                                        <br />
+                                                        <br />
+                                                    </EditItemTemplate>
+                                                    <InsertItemTemplate>
+                                                       <table class="style1">
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <h5>
+                                                                        Insert a symptom</h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Description</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="SymptomDescTextBox" runat="server" 
+                                                                        Text='<%# Bind("SymptomDesc") %>' Width="436px" />
+                                                                </td>
+                                                            </tr>
+                                                            <%--<tr>
+                                                                <td>
+                                                                    Loc ID</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" 
+                                                                        Text='<%# Bind("LocID") %>' />
+                                                                </td>
+                                                            </tr>--%>
+                                                            <tr>
+                                                                <td>
+                                                                    DT Type</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="DTTypeTextBox" runat="server" Text='<%# Bind("DTType") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Enabled</td>
+                                                                <td>
+                                                                    <asp:CheckBox ID="SymptomEnabledCheckBox" runat="server" 
+                                                                        Checked='<%# Bind("SymptomEnabled") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    &nbsp;</td>
+                                                                <td>
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+                                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                                            CommandName="Insert" Text="Insert" onclick="InsertButton_Click1" />
+                                                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                                        <br />
+                                                    </InsertItemTemplate>
+                                                    <ItemTemplate>
+                                                        SymptomID:
+                                                        <asp:Label ID="SymptomIDLabel" runat="server" Text='<%# Eval("SymptomID") %>' />
+                                                        <br />
+                                                        SymptomDesc:
+                                                        <asp:Label ID="SymptomDescLabel" runat="server" 
+                                                            Text='<%# Bind("SymptomDesc") %>' />
+                                                        <br />
+                                                        LocID:
+                                                        <asp:Label ID="LocIDLabel" runat="server" Text='<%# Bind("LocID") %>' />
+                                                        <br />
+                                                        DTType:
+                                                        <asp:Label ID="DTTypeLabel" runat="server" Text='<%# Bind("DTType") %>' />
+                                                        <br />
+                                                        SymptomEnabled:
+                                                        <asp:CheckBox ID="SymptomEnabledCheckBox" runat="server" 
+                                                            Checked='<%# Bind("SymptomEnabled") %>' Enabled="false" />
+                                                        <br />
+                                                        <asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                                                            CommandName="Delete" Text="Delete" />
+                                                    </ItemTemplate>
+                                                </asp:FormView>
+                                                <br />
+                                                <asp:LinkButton ID="LinkButton4" runat="server" onclick="LinkButton4_Click">Insert 
+                                                New Symptom</asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+                                                    DeleteMethod="Delete" InsertMethod="Insert" 
+                                                    OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBySymptomID" 
+                                                    TypeName="LocationsTableAdapters.tblSymptomTableAdapter" UpdateMethod="Update">
+                                                    <DeleteParameters>
+                                                        <asp:Parameter Name="Original_SymptomID" Type="Int32" />
+                                                    </DeleteParameters>
+                                                    <InsertParameters>
+                                                        <asp:Parameter Name="SymptomDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="DTType" Type="Int32" />
+                                                        <asp:Parameter Name="SymptomEnabled" Type="Boolean" />
+                                                    </InsertParameters>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="GridView1" Name="SymptomID" 
+                                                            PropertyName="SelectedValue" Type="Int32" />
+                                                    </SelectParameters>
+                                                    <UpdateParameters>
+                                                        <asp:Parameter Name="SymptomDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="DTType" Type="Int32" />
+                                                        <asp:Parameter Name="SymptomEnabled" Type="Boolean" />
+                                                        <asp:Parameter Name="Original_SymptomID" Type="Int32" />
+                                                    </UpdateParameters>
+                                                </asp:ObjectDataSource>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ContentTemplate>
+                            </cc1:TabPanel>
+                        </cc1:TabContainer>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="TreeView1" 
+                            EventName="SelectedNodeChanged" />
+                    </Triggers>
+                </asp:UpdatePanel>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td class="style1" style="width: 50%" valign="top">
+                &nbsp;
+            </td>
+            <td valign="top">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+</asp:Content>

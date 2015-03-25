@@ -1,0 +1,541 @@
+﻿Version 2.2.0
+Upgrades - not exhaustive
+1)  Stop double click on downtime entry and closure
+2)  Updated and checked all reports in data vis final
+3)  Created search by activities text search
+4)  Upgraded time lines and allowed link of timelines to extra data
+5)  Auto refresh set up on wshome page and all line status page
+6)  Create OEE by line report
+
+Version 2.2.1
+Upgrades
+
+2.2.1-1)  DT start algorithm updated to ensure that downtime is connected to correct activity - done
+2.2.1-2)  Bug: Update query to sort times in correct order for time line generation.  Time line now generates without errors - done
+2.2.1-3)  Add validation on entering and editing symptom and root cause locations to force entry of a description - done
+2.2.1-4)  Disabled editing of the lotstatus and downtimeID from symptomlocations - done
+2.2.1-5)  Updated remedy entry to allow up to 2000 characters - done
+2.2.1-6)  Bug: going to eng note then back to home and back to eng note showed no buttons on drill down list.  Bug fix:  Set location code to 0 on non postback and non pathlink click -done
+2.2.1-7)  Added colour key to the time line on wshome
+2.2.1-8)  Made time bold on quickclose end downtime
+2.2.1-9)  bug:  On closing downtime the rootcause location was entering as 0 sometimes.  fix:  put a catch into check if the root cause location session ID was 0 and if so stop the update of the db
+2.2.1-10) Update root cuase edit to allow updateing of root cause location
+2.2.1-11) Addition of export to excel in downtime notes, downtime search and activity search pages
+2.2.1-12) Allowed for selection of downtime for last 24 hours or by shift on WShome
+2.2.1-13) Set Default tab on home page to timeline
+2.2.1-14) Put the line status file in the front end and updated link to it in web.sitemap
+2.2.1-15) Removed link to Availability by month.  page obselete
+2.2.1-16) Added timeline legend to period analysis
+2.2.1-17) Added titles to top 10 downtime, activity comparison, downtime drilldown by location charts
+2.2.1-18) Added legend to activity comparison chart
+
+Version 2.2.2
+Upgrades
+
+2.2.2-1)  Updated activity start and end so an overlap with the current activity does not give an ovelapping message - tested ok
+2.2.2-2)  Note:  An index should be created on the parentlocID column to improve OEE calculation speed.
+2.2.2-3)  Added a new page (Downtimebydaycount.aspx) to count the number of downtime events recorded by day
+2.2.2-4)  Updated activity comparison chart to allow link to details from data point click
+2.2.2-5)  Updated activitydetails.aspx to give details of pre and post lots or change overs
+2.2.2-6)  Updated top10downtimedetails to allow selection of the downtime for editing 
+2.2.2-7)  changed editdowntime.aspx to allow for direct access from querystring.  Selection criteria are hidden on selection from query string
+2.2.2-8)  OEEbyline.aspx change the date entrys to calendar dropdowns and default thier time to 00:00:00
+2.2.2-9)  downtimebylocation.aspx change the date entrys default time to 00:00:00
+2.2.2-10) Allactivityanalysismultiformat.aspx change the date entrys to calendar dropdowns, default time to 00:00:00
+2.2.2-11) Updated EditRemedyRootCause.aspx to show root cause location path for root cause loc ID.  Updates the path when a new path is selected from the selection buttons below
+2.2.2-12) Editdowntime.aspx.  Add emptydata template.
+2.2.2-13) Downtimedrilldownbylocation.aspx added empty data templates to gridviews
+2.2.2-14) top10downtimes.aspx default line to index 0 and activity to index 3.  Added calendar dropdowns to date selection default time to 00:00:00.  Added tool tip to the bar to show total time.
+2.2.2-15) wshome.aspx change the name of the lotno/co name label to changeover name from changeover type
+2.2.2-16) downtimesearch.aspx  added root cause location path to table
+ 
+
+Version 2.2.3
+Upgrades
+
+2.2.3-1)  editremedyrootcause.aspx updated to fix update error and include path for root cause location
+2.2.3-2)  activitysearch.aspx added column to include trimmed activity time.
+2.2.3-3)  oeebyline.aspx  updated with calculation of standard changeover time (new db function dbo.standardchangeovertimeOEE2) (c/o which overlap start and end of period are trimmed  by the following rules.  1)  std time = std time - any time outside of period 2) if calc in 1 is <0 ie: more than the standard time has elapsed outside of the period, the standard time for that changeover = 0.
+2.2.3-4)  downtimesearch.aspx  added filtering by line and date as well as key word also added an actual downtime to display trimmed downtime by shift
+2.2.3-5)  activitysearch.aspx added filtering by line and date as well as key word
+2.2.3-6)  wshome.aspx changed functionality for shift or 24 hour data review to cover all data in tabs.  updated chart to pie chart for availability calculation
+2.2.3-7)  Updated downtimesearch.aspx to eliminate error in gridview_rowdatabound for .nbsp being converted to an integer.
+
+
+
+Version 2.2.4
+Upgrades
+
+2.2.4-1)  Added DonwntimeEngNoteSearch page for simultaneous search in front end. 
+2.2.4-2)  Added downtimedrilldown, OEEbyline, Top10downtimes options to front end for tech access.
+
+
+Version 2.2.5
+
+Installation
+
+1.  Install stored procedures insertrootcause, insertremedy and insertdowntime on database before updating application 
+
+Upgrades
+
+2.2.5-1)  Added the downtime and engnote search to the front end dataanalysis search menu
+2.2.5-2)  Updated error message when linking downtime to a previous activity
+2.2.5-3)  Added time into the downtime message on the marquee control
+2.2.5-4)  Formating on downtimedetails detials view
+2.2.5-5)  Formatting on downtimeengnotesearch gridviews and chart
+2.2.5-6)  Updated formatting on chart for top 10 downtimes and OEE at front end 
+2.2.5-7)  Created a changeover comparison page and added to front end data analysis
+2.2.5-8)  Created stored procedure InsertDowntime and updated downtime start algorithm to use SP - done in order to remove the maxid query on addition of new downtime
+2.2.5-9)  Created stored procedures for insert rootcause and insert remedy and updated reviewrootcause.aspx to implement.  - done to remove the maxid query on addition of new downtime
+
+Version 2.2.6
+
+Installation
+
+1.  Install scalar functions downtimecount and downtimecountdrilldown
+2.  Full copy of application except web.config
+
+Upgrades
+
+2.2.6-1)  Added page datafunctions.aspx to demonstrate all the data functions available and their requisite inputs
+2.2.6-2)  Updated formatting in managesymptomlocations 
+2.2.6-3)  Added count column to frontend downtimedrilldownbylocation, also added annotations with time of downtime to each chart bar
+2.2.6-4)  Added changeover examples to startendactivity page
+2.2.6-5)  Re ordered symptoms by alphabetical order at wshome.aspx
+2.2.6-6)  Added time annotations to top 10downtime chart
+
+Version 2.2.7
+
+Upgrades
+
+Installation 
+
+1.  Create a new column on tblLoc called downtimeEmailSent type bit default value = false
+2.  add a new column dateval to tblconfig and add two new items  3. pollingserver handshake and 4.time before email is sent 5.Email smtp server address.  numbers are important
+3.  Create table
+
+GO
+/****** Object:  Table [dbo].[tblEmailbyLine]    Script Date: 11/01/2008 18:28:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tblEmailbyLine](
+	[EmailLineID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NULL,
+	[LineSymptomID] [int] NULL,
+ CONSTRAINT [PK_tblEmailbyLine] PRIMARY KEY CLUSTERED 
+(
+	[EmailLineID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+3.  Install DMSPollingServer.exe on database machine
+
+
+2.2.7-1)  bug: timelines were going blank on autopostback.  updated wshome and timelines2 to ensure that post back properly.  had to add fns to clear collection from each timeline and then ensure all ctrls are deleted from the timeline before production of the next one. also updated the chart to ensure no double series occured on shift/24hr postback.
+2.2.7-2)  bug: downtime marquee message was dissapearing on selecting Rbl change 24/shift.  updated wshome to check for downtime when the rbl was changed.  issue eliminated.
+2.2.7-3)  bug: timeline was setting to total shift on redirect. updated so end time is always now()
+2.2.7-4)  added page for linking lines to email addresses
+2.2.7-5)  Updated downtime end and quick close to set downtimeemail sent field to false
+2.2.7-6)  Developed DMSPolling server to check for downtimes and send emails as appropriate
+
+
+Version 2.2.8
+
+Upgrades
+
+2.2.8-1)  frontend/top10downtimes not generating any data until radio button list changed.  fixed bug
+2.2.9-2)  moved engnotedowntimesearch to frontend/datavis folder, fixed broken home link on this page
+2.2.8-3)  ActivityDetails updated to include actual activity time trimmed by shift
+2.2.8-4)  Engnotedowntimesearch updated formatting for engdowntimenote search gridviews
+2.2.8-5)  Started working on a visual only front end - not completed at release
+
+
+Version 2.2.9
+
+installation:
+
+1)  Install SQL files from InstallFiles folder
+2)  full file copy from master
+3)  Add users for the security accoutns on the line machines at level 1
+4)  Add configID 6 short stop max downtime value to tblconfig
+
+
+Upgrades
+
+2.2.9-1)  Added the following functionality for short stops 
+ 
+     To set up a short stop
+     1) Set the symptom level downtime type to 2
+     2) Ensure the quick close is enabled for the same symptom
+      
+     Flow is as follows.  
+     1) short stop button is clicked, downtiime is immediately started with no sign in
+     2) close downtime button appears on home page
+     3) On clicking close downtime time user is taken to review remedies page with a list of quick close items
+     4) On selecting quick close time is checked to see if it is > 3 mins if so user must enter a symptom location and then is redirected to close the downtime for that symptom
+     5) if time < 3 mins user is taken direct to quick close confirm where they can click with no sign
+     To set up correctly you must define a symptom as a downtime type 2.  You must enable quick close for the symptom. it is best to have the symptom at the top level of the tree so 
+     it is always accessible for the user
+
+2.2.9-2) Added configuration editor page
+2.2.9-3) Added drilldown.ascx user control for quick addition of drilldown capability to page.  Currently used only in the reassigning of symptom locations for short stop issues
+2.2.9-4) Completed DataVis folder for data visualisation only.  Added fuctionality to ensure a user at level 0 can only get directed to a dataVis page
+2.2.9-5) updated short stop symptom reset so the drilldown defaults to the workdstation ID
+2.2.9-6) added config value for short stop max downtime.  added as number 6 in table
+2.2.9-7) set config description to read only in tblconfig
+2.2.9-8) removed link from eng note for eng note search
+2.2.9-9) updated activity details popup to include downtime related to an activity.
+2.2.9-10) Changed reviewremedy data grid in rootcausereview to not page when the list is long.
+2.2.9-11) Updated chanage over times list
+2.2.9-12) Updated RootCuaseReview so if a user < level 4 tries to close a short stop the option to enter a new root cause and remedy is not available.
+2.2.9-13) Updated rootcausereview so shortstop (DTType = 2) doesnt show when user is redirected to enter symptom 
+
+
+Version 2.2.10
+
+Installation:
+
+1)  run scripts in install files > 2.2.10 folder
+
+Upgrades
+
+2.2.10-1)  Script to update the drilldown for the drilldown control to ensure it drills down to the root location level
+2.2.10-2)  Removed reference to button in note.aspx which was deleted previously and causing a bug
+
+
+Version 2.2.11
+
+Installation
+
+1)  run scripts in install files > 2.2.11 folder
+
+Upgrades
+
+2.2.11-1) manage symtpom locations. Set validation on the symptom description due to bug where no symptom description was causing a crash on wshome
+2.2.11-2) manage symtpom locations. Set drop downlist to list short stop and normal stop items.
+2.2.11-3) Updated timeline so if you enter "0" as the URL then there is no popup from the selected timeline and no error is raised.
+2.2.11-4) Updated WSHome page load to redirect to vis only if you are user level 0 or have no account.
+2.2.11-5) Updated the downtime eng note search to be able to search all lines for notes and downtime.
+2.2.11-6) Updated activity search to include shifts involved in activity.
+2.2.11-7) Updated frontenddatavis>changeovercomparison to include shift indicators on points and in activitydetails.
+
+
+Version 2.2.12
+
+Installation
+
+1) run scripts in install files > 2.2.12 folder
+2) Install and run dms polling server application on system.  dont forget to set the connecttion string.
+
+Upgrades
+
+2.2.12-1)  Added assets table to accomodate asset specific information such as shortstop period and email period, updated managesymptomlocations and Root cause review to integrate.
+2.2.12-2)  Created OEE Waterfall page with waterfall data generation, including proc for wtd average format speed
+2.2.12-3)  Completed Email functionality for DMS server
+2.2.12-4)  Added show shift check box on downtime comparison
+
+Version 2.2.13
+
+2.2.13-1)  Fixed bug with entering downtime retrospectively and not attaching to the appropriate activity. wshome.aspx
+
+
+Version 2.2.14
+
+Installation
+
+1)  Add table activity comment to database
+
+Upgrades
+
+2.2.14-1)  Updated engnotedetails query to fix bug where it was not selecting by date.
+2.2.14-2)  Added comments to a lot/changeover so a comment can be made about a specific lot - this is then visible at the activity details screen.
+
+version 2.2.15
+
+Installation
+
+1)  Add table tblShiftHand to database (see install files folder)
+
+upgrades
+
+2.2.15-1) updated some descriptions in change over pagge
+2.2.15-2) Added shift hand over functionality
+
+
+
+Version 3.0 beta 0
+1)  full copy of new database required.
+
+Upgrades
+
+1) integration wtih DAQ system to allow automatic collection of downtime
+
+Version 3.0 beta 1
+
+1)  Addition of field to tblAsset to manage the display of the chart for concatenating downtimes.
+
+Version 3.0 beta 2
+Installation
+
+1)  tblasset add columns for output control
+
+	[OutputCalcType] [int] NULL,
+	[OutputConnString] [nvarchar](200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OutputSQL] [nvarchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OutputSQLvar1] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+    [BlanketClose] [bit]
+
+add to tblformat the following column	
+	CREATE TABLE [dbo].[tblFormat](
+	[outputMultiplier] [decimal](18, 0) NULL,
+	
+	add to tblevent 
+	[EventBlanketEventID] [int] NULL,
+	
+	
+	
+	
+
+full update of files
+
+remedy for auto short stops 3825
+short stop location 707
+
+upgrades
+
+1) daqwshome.aspx Added sorting to the downtime table 
+2) daqwshome.aspx Added a reload of the page after a change over to ensure the header data updates properly.
+3) daqwshome.aspx Functionality for a slider control for zooming
+4) daqwshome.aspx added functionality to look up output from external database
+
+Version 3.0 Beta 3
+
+1) Updated tooltip on downtime to show start and end times.
+2) Updated downtime chart to always show seelction from timeline and also added minutes column
+3) Updated timeline to have :00 at the end and also to add 30 min lines
+
+Version 3.0 Beta 4
+Installation
+
+Add SuperShortStopPeriod [int] to tblAssett
+Add column to tblformat FormatLongDescription nvarchar(500)
+
+Full webapp copy
+
+Upgrades
+
+1) Added super short stop functionality to close shortstops automatically if they are less than the time set in 
+the asset master record.  Normal short stops now close between super short stop and normal short stop time.
+2) Added blanket downtimes for short stops 
+3) Added long description to the format for changeover descriptoin
+4) Added downtime report by lot for printing of downtime
+
+Version 3.0 beta 5
+
+1) Added the format to the run chart along with the lot number
+
+Version 3.0 Beta 6
+
+1)  Changed the activity for downtime criteria to show the most recent activity for the time the downtime occurs
+it was selecting the first activity for when the downtime occurs, if it was overwritten it was behaving unusually.
+2) Updated shortstop event blanketting to stop selection of active event
+3) Added buttons to close short stop event
+4) colours changed to red = untreated, orange = symptom only, green = completed 
+
+Version 3.0 beta 7
+
+1) updated downtime treated color to grey
+2) Bug fix:  Added a check for a 0 for tempsymptomID during addition of symptom.  Some DTs are coming through with 
+no symptom and have not been able to find why.  System should just close now without treating downtime
+3)  Updated the downtime edit to allow changing of activity in which downtime occured
+
+Version 3.0 beta 8
+
+1)  udpated activity search report to include downtime for each activity in the same table
+2)  Updated SS list to sort by alphabetical order
+
+
+Version 3.0 Beta 8.5
+
+1) added report for multiline, multiformat
+2) added report for multiline, multiformat grouped by periods
+
+
+
+Version 3.0 beta 9
+
+1)  fixed bug with inserting formats locking up.
+2)  Added function to check for unclosed downtime at the end of a lot
+3)  Changed colour of manual downtime boxes to orange for better visability at downtime entry 
+4)  Added functionality to allow for a number of good product to be entered when required for OEE calc
+5)  Added target time for chagne over to activity details 
+6)  Removed SS from downtime report for QPs.  Adjusted all Short stop symptoms in table except those for BL1 to DTtype 1.
+
+
+
+version 3.0 beta 10
+
+1)  remove downtime check at end of lot due to bug
+
+
+
+
+
+Version 3.0 beta 11
+
+Installation
+
+1) install files in 3.0.11
+
+in tblmonth create field
+[MonthID] [int] IDENTITY(1,1) NOT NULL
+
+run lastdayofmonth query to populate months table
+
+run
+
+USE [DMSDAQPROD]
+GO
+
+/****** Object:  Table [dbo].[tblDAQServiceMonitor]    Script Date: 07/07/2010 14:36:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblDAQServiceMonitor](
+	[ServerHandShake] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+
+
+
+
+Updates
+
+1)  allowed editing of symptom at root cause level in edit root cause box
+2)  Added seconds of downtime to the downtime report
+3)  Update set workstation to default to daqwshome instead of wshome
+4)  update multilinemultiformat reports to format properly in master pages and to carry out some error catching
+    also added facility to add an integer to a period if the periods dont match in the dategroup report
+5)  Added efficienttime calculation
+        - selects all lots which overlap in a period selected    
+        - trims lots which overlap the ends of the periods and pro ratas the good output based on (activity time after trim/activity time before trim)
+        - for each lot divide the good units by the rate for the format
+        - sum all times to give efficient time.
+6)  updated downtimefunctions sheet with efficient time
+7)  Created report for downtimerate and efficient time OEE per week
+8)  changed manual downtime close out so event is closed to entered end time rather than now()
+9)  Changed manual downtime close out so that manual downtime is assinged to the activity to which it starts in rather than the current activity. allowing for manual entry of downtime after the lot is finished.
+10) added month view function to the efficient time OEE report
+
+
+
+Version 3.1
+
+1)  Updated name of DMS to DMS version 3.1
+2)  Added an indicator on DMS home page to show if hte DAQ server is running or not based on the handshake time
+3)  Added fucntionality to create a new activity when the first format is created to for a line to stop error occuring on initial load of DMS DAQ page
+4)  Created Multiview timeline for all 3 blister lines in one view
+
+
+
+Version 3.2
+
+Location of config file for DAQDMSService.config file
+C:\Documents and Settings\Dinnissj\My Documents\Visual Studio 2008\Projects\DMSPollingService\DMSPollingService\bin\Release
+
+Install
+
+1) Add tblShortStopImage
+2) Add column to tblremedy for SSButtonColour nvarchar(50)
+3) Add tblImageClick
+
+Udpates
+
+1)  Added functionality to allow image to be clicked after a shortstop is selected and for user to select location of issue.
+2)  Added functionality to color short stop buttons 
+3)  Added page Short stop images to allow for managing images and button colours as defined above.
+4)  Updated multiview page to improve formatting, add to master page and allow for an automatic update
+5)  Added scrolling to short stop selection list to stop it overrunning the page
+
+
+
+
+Version 3.2.2
+
+1)  Added scrolling to drilldown control to allow scrolling for long lists.
+2)  Update the paging in the shift management gridview to allow jumping to the last page.
+
+Veraion 3.2.2
+
+1) Updated the drilldowncontrol to stop the endloc setting to 0 instead of 1, which was causing a bug on the 
+reviewrootcause.aspx page in the manual DMS.
+2) Ported over gridview to show formats only applicable to line from daqWShome to StartEndActivity.aspx.  removed old packaging table
+
+
+Version 3.3.3
+
+1) update to allow redirect on clicking home button to home page defined for each line
+2) added function to highlight if a ss has occured more than 5 times in a row and provide link to AM manual
+3) to add link to SS remedy you must edit the SS remedy and add the following into the database to create a link
+    to an external document.
+    examples website: <a  href=http://www.google.com>link it</a>
+    examples file structure: <a  href="file://tilserver2/depts/">asdfasdf</a>
+4) Fixed bug with green bar on manual DMS going very large
+5) removed second data analysis link from manual dms
+6) allowed setting of exec sign time for DGB manual downtime
+
+version 3.3.4
+
+1) Bug fix for technologist sign issue in DGB DMS system
+
+
+Version 4.0
+
+Major release with counter functionality for new DAQ units
+
+Installation
+
+1) install sp InsertStartEvent, InsertEndEvent, InsertNewLot
+2) Add columns eventstartcount int, eventendcount int to tblevent
+3) Add column countervalue int to tbleventdevice
+4) Add startcount int and endcount int to tblactivity
+5) check columns evenstartcount int and eventendcount int in tblevent are set to 0 for all events
+
+Updates
+
+1) Added functionality to allow counter DAQ unit usage
+
+Version 4.1
+
+1) set manual downtime button to appear in dmsdaqfrontend.aspx during batch running to allow for rework issue showing as run time on BL4.
+
+Version 4.2
+
+1) Added functionality to daqWSHome.aspx to show carton, batch % complete, carton target, OEE and est Completion time
+
+
+Version 4.3
+
+1) Fixed bug with error on changeover comparison where no shift was throwing an exception
+
+Version 4.4
+
+1) Updated bug with shift load information
+2) Added itemcode addition to lot change in manual system
+
+
+Version 4.5
+installation
+
+update sp insertnewlot
+add column itemcode to activities table
+
+
+1) added item code addition to lot change in DAQ system

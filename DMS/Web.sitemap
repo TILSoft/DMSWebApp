@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Menu"  description="">
+    <siteMapNode url="" title="Administration"  description="">
+      <siteMapNode url="zAdministration\ManageRootCauseLocations.aspx" title="Manage Root Cause, Parameters"  description="" />
+      <siteMapNode url="zAdministration\ManageSymptomLocations.aspx" title="Manage Symptoms, Formats, C/Os"  description="" />
+      <siteMapNode url="zAdministration\AssetManagement.aspx" title="Manage Line Settings"  description="" />
+      <siteMapNode url="zAdministration\CopyEntireLine.aspx" title="Copy Entire line"  description="" />
+      <siteMapNode url="zAdministration\ManageShifts.aspx" title="Create Shifts"  description="" />
+      <siteMapNode url="zAdministration\EditShifts.aspx" title="Edit Shifts"  description="" />
+      <siteMapNode url="zAdministration\ManageUsers.aspx" title="Users"  description="" />
+      <siteMapNode url="zAdministration\EditLots.aspx" title="Edit Lots/Change overs"  description="" />
+      <siteMapNode url="zAdministration\EditDowntime.aspx" title="Edit Downtime"  description="" />
+      <siteMapNode url="FrontEnd\SetWorkStation.aspx" title="Set WorkStation"  description="" />
+      <siteMapNode url="zAdministration\Emailbyline.aspx" title="Email by line"  description="" />
+      <siteMapNode url="zAdministration\configedit.aspx" title="Config Editor"  description="" />
+      <siteMapNode url="zAdministration\Errors.aspx" title="Errors"  description="" />
+      <siteMapNode url="zAdministration\shortstopmanager.aspx" title="Short Stop Images"  description="" />
+      
+      </siteMapNode >
+    <siteMapNode url="" title="Analysis"  description="">
+      <siteMapNode url="DataVisFinal\DowntimeDrilldownbyLocation.aspx" title="D/T Analysis"  description="" />
+      <siteMapNode url="DataVisFinal\AllActivityAnalysisMultiformat.aspx" title ="Activity Comparison"  description="" />
+      <siteMapNode url="DataVisFinal\LotAnalysis.aspx" title ="Performance Analysis"  description="" />
+      <siteMapNode url="DataVisFinal\PeriodAnalysis.aspx" title ="Time Line"  description="" />
+      <siteMapNode url="frontend\frontenddatavis\downtimeEngNoteSearch.aspx" title ="DT and Eng Note Search"  description="" />
+      <siteMapNode url="DataVisFinal\Top10Downtimes.aspx" title ="Top 10 Downtimes"  description="" />
+      <siteMapNode url="DataVisFinal\DowntimeSearch.aspx" title ="Downtime Search"  description="" />
+      <siteMapNode url="DataVisFinal\Activitysearch.aspx" title ="Activity Search"  description="" />
+      <siteMapNode url="DataVisFinal\OEEbyline.aspx" title ="OEE by line"  description="" />
+      <siteMapNode url="FrontEnd\alllinesstatus.aspx" title ="Line Status Summary"  description="" />
+      <siteMapNode url="DataVisFinal\Downtimebydaycount.aspx" title ="Downtime Count"  description="" />
+      <siteMapNode url="DataVisFinal\DataFunctions.aspx" title ="Data Functions"  description="" />
+      <siteMapNode url="DataVisFinal\Waterfall.aspx" title ="OEE Watefall"  description="" />
+      <siteMapNode url="FrontEnd\WShome.aspx" title="Home"  description="" />
+      <siteMapNode url="daqFrontEnd\daqWShome.aspx" title="daqHome"  description="" />
+    </siteMapNode>
+  </siteMapNode >
+</siteMap>
