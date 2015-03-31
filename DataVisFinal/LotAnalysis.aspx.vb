@@ -16,12 +16,7 @@ Partial Class FrontEnd_DataVisualisation_LotAnalysis
                 visualisation()
             End If
 
-
-
         End If
-
-
-
 
     End Sub
 
