@@ -1,0 +1,96 @@
+﻿<%@ Master Language="VB" CodeFile="WShome.master.vb" Inherits="FrontEnd" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>TIL Downtime Management System</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+<script language ="javascript" type ="text/javascript"  >
+  // Script to generate an automatic postBack to the server
+var secs
+var timerID = null
+var timerRunning = false
+var delay = 1000
+function InitializeTimer()
+{
+    // Set the length of the timer,
+    // in seconds. Your choise
+    secs = 300    
+
+    StopTheClock()
+    StartTheTimer()
+}
+function StopTheClock()
+{
+    if(timerRunning)
+        clearTimeout(timerID)
+    timerRunning = false
+}
+function StartTheTimer()
+{
+    if (secs==0)
+    {
+        StopTheClock()
+
+        // Form1.Post1 is a HTML an input button
+        // on your Design form. See below.
+        
+       // Form1.post1
+        javascript:__doPostBack('') 
+        //Generate a Postback to the server
+        InitializeTimer()
+        // Start the timer again
+    }
+    else
+    {
+        secs = secs - 1
+        timerRunning = true
+        timerID = self.setTimeout("StartTheTimer()", delay)
+    }
+}
+
+
+</script>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="InitializeTimer()" >
+
+    <form id="Form1" runat="server" method = "post">
+    <div>
+    
+        <table class="style1">
+            <tr>
+                <td>
+    
+        <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="Solid" 
+            BorderWidth="1px" CausesValidation="False">Home</asp:LinkButton>
+    
+                </td>
+                <td align="right">
+                    auto refresh page</td>
+            </tr>
+        </table>
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+      <asp:button id="Post1" type="button" value="j" runat="server" />
+  
+    </div>
+    
+     
+    </form>
+
+</body>
+</html>

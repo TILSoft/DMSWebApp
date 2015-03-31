@@ -1,0 +1,39 @@
+﻿1)  all page heading are heading 2
+2)  all section headings are heading 5
+3)  for search order is top to bottom date, line, format, other
+4)  Actual downtime and elapsed downtime = trimmed downtime and total downtime
+5)  Charts 800 wide by 600 high pixels
+
+asdfsafgsdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL functions
+
+1) downtimesearch.aspx - Getrootlocdescription, individualdowntimetrim
+2) OEEbyline.aspx - dbo.standardchangeovertimeOEE2
+
+
+
+
+
+
+
+
