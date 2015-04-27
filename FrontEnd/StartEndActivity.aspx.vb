@@ -138,7 +138,14 @@ Partial Class FrontEnd_StartEndActivityaspx
 
                 Case 1
                     'start a new lot
-                    actiadap.InsertNewLot(RadioButtonList1.SelectedValue, CInt(Session("workstationID")), txtPopTime.Text, txtLot.Text, ActivityID, ddlFormat.SelectedValue, txtTarget.Text, userid, Now(), txtItemCode.Text)
+                    If cbManualLot.Checked = True Then
+                        'if manual entry is used for lot no, item code and target
+                        actiadap.InsertNewLot(RadioButtonList1.SelectedValue, CInt(Session("workstationID")), txtPopTime.Text, txtLot.Text, ActivityID, ddlFormat.SelectedValue, txtTarget.Text, userid, Now(), txtItemCode.Text)
+                    Else
+                        'if auto entry is used for lot no, item code and target from xfp_sap WO table.
+                        actiadap.InsertNewLot(RadioButtonList1.SelectedValue, CInt(Session("workstationID")), txtPopTime.Text, ddlLotNumber.SelectedItem.Text, ActivityID, ddlFormat.SelectedValue, lblTargOutput.Text, userid, Now(), lblItemcode.Text)
+                    End If
+
 
                 Case 2
                     'start a new CO.
@@ -177,5 +184,69 @@ Partial Class FrontEnd_StartEndActivityaspx
         End If
 
 
+    End Sub
+
+    Protected Sub cbManualLot_CheckedChanged(sender As Object, e As EventArgs) Handles cbManualLot.CheckedChanged
+        'enable or disable manual lot entry
+
+        If cbManualLot.Checked = True Then
+            ddlLotNumber.Enabled = False
+            txtLot.Enabled = True
+            txtItemCode.Enabled = True
+            txtTarget.Enabled = True
+            RequiredFieldValidator2.Enabled = True
+            RequiredFieldValidator3.Enabled = True
+            RequiredFieldValidator4.Enabled = True
+
+        Else
+            ddlLotNumber.Enabled = True
+            txtLot.Enabled = False
+            txtItemCode.Enabled = False
+            txtTarget.Enabled = False
+            RequiredFieldValidator2.Enabled = False
+            RequiredFieldValidator3.Enabled = False
+            RequiredFieldValidator4.Enabled = False
+
+        End If
+
+    End Sub
+
+    Protected Sub ddlLotNumber_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlLotNumber.SelectedIndexChanged
+        'select itemcode and qty from lot no, populate label fields.
+
+        Dim workorderno As String = ddlLotNumber.SelectedValue
+        Dim lotno As String = ddlLotNumber.SelectedItem.Text
+
+        Dim adapWO As New ActivityTableAdapters.tblSAPWorkOrderInterfaceTableAdapter
+        Dim dtWO As Activity.tblSAPWorkOrderInterfaceDataTable
+
+        dtWO = adapWO.GetDataBy(Trim(workorderno))
+
+        If dtWO.Rows.Count > 0 Then
+
+            Dim rowWO As Activity.tblSAPWorkOrderInterfaceRow = dtWO.Rows(0)
+
+            lblItemcode.Text = rowWO.Itemcode
+
+            If Not IsDBNull(rowWO.Description) Then
+                lblItemdesc.Text = rowWO.Description
+            End If
+
+            lblTargOutput.Text = rowWO.Quantity / 1000
+            lblUnit.Text = rowWO.Unit
+
+        Else
+
+            lbllogmess.Text = "No work order found for this lot no"
+
+        End If
+
+
+
+
+
+
+        ' what to do if there are /1,/2 lots in the list?
+        'manage lot numbers coming in so we only 
     End Sub
 End Class

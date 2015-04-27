@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DAQWSHome.aspx.vb" Inherits="controls_charttemp_daqTest" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DAQWSHome-old.aspx.vb" Inherits="controls_charttemp_daqTest" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Src="../Controls/DAQTimeline.ascx" TagName="DAQTimeline" TagPrefix="uc1" %>
@@ -241,8 +241,6 @@
                         <asp:ListItem>6</asp:ListItem>
                         <asp:ListItem>12</asp:ListItem>
                         <asp:ListItem>24</asp:ListItem>
-                        <asp:ListItem Value="48"></asp:ListItem>
-                        <asp:ListItem Value="72"></asp:ListItem>
                     </asp:DropDownList>
                     </td>
                             <td>
@@ -955,55 +953,21 @@ Manual downtime (for CO use only)</asp:LinkButton>
                                                     </tr>
                                                     <tr>
                                                         <td width="50%">
-                                                            Select a Lot Number</td>
-                                                        <td>
-                                                            <asp:DropDownList ID="ddlLotNumber" runat="server" AutoPostBack="True" DataSourceID="odsWO" DataTextField="LotNo" DataValueField="WorkOrderNo">
-                                                            </asp:DropDownList>
-                                                            <asp:ObjectDataSource ID="odsWO" runat="server" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="ActivityTableAdapters.tblSAPWorkOrderInterfaceTableAdapter">
-                                                                <InsertParameters>
-                                                                    <asp:Parameter Name="WorkOrderNo" Type="String" />
-                                                                    <asp:Parameter Name="Itemcode" Type="String" />
-                                                                    <asp:Parameter Name="FormulaCode" Type="String" />
-                                                                    <asp:Parameter Name="LotNo" Type="String" />
-                                                                    <asp:Parameter Name="Quantity" Type="Double" />
-                                                                    <asp:Parameter Name="Unit" Type="String" />
-                                                                    <asp:Parameter Name="LotNoClean" Type="String" />
-                                                                    <asp:Parameter Name="lastmodifiedtime" Type="DateTime" />
-                                                                    <asp:Parameter Name="Description" Type="String" />
-                                                                </InsertParameters>
-                                                            </asp:ObjectDataSource>
-                                                            &nbsp;
-                                                            <asp:CheckBox ID="cbManualLot" runat="server" Text="Manual lot entry" TextAlign="Left" AutoPostBack="true" />
+                                                            Lot Number
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="50%">Item Code</td>
                                                         <td>
-                                                            <asp:Label ID="lblItemcode" runat="server"></asp:Label>
-                                                            &nbsp;<asp:Label ID="lblItemdesc" runat="server"></asp:Label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="50%">Target Output</td>
-                                                        <td>
-                                                            <asp:Label ID="lblTargOutput" runat="server"></asp:Label>
-                                                            &nbsp;<asp:Label ID="lblUnit" runat="server"></asp:Label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="50%">Lot Number</td>
-                                                        <td>
-                                                            <asp:TextBox ID="txtLot" runat="server" Enabled="False"></asp:TextBox>
-                                                            <asp:RequiredFieldValidator ID="rfvLot" runat="server" ControlToValidate="txtLot" Enabled="False" ErrorMessage="You must enter a lot number"></asp:RequiredFieldValidator>
+                                                            <asp:TextBox ID="txtLot" runat="server"></asp:TextBox>
+                                                            <asp:RequiredFieldValidator ID="rfvLot" runat="server" 
+                                                                ControlToValidate="txtLot" ErrorMessage="You must enter a lot number"></asp:RequiredFieldValidator>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td width="50%">
                                                             Item Code</td>
                                                         <td>
-                                                            <asp:TextBox ID="txtItem" runat="server" Enabled="False" EnableTheming="True"></asp:TextBox>
-                                                            <asp:RequiredFieldValidator ID="rfvItem" runat="server" 
-                                                                ControlToValidate="txtItem" ErrorMessage="You must enter an item code" Enabled="False"></asp:RequiredFieldValidator>
+                                                            <asp:TextBox ID="txtItem" runat="server"></asp:TextBox>
+                                                            <asp:RequiredFieldValidator ID="rfvLot0" runat="server" 
+                                                                ControlToValidate="txtItem" ErrorMessage="You must enter an item code"></asp:RequiredFieldValidator>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1011,11 +975,10 @@ Manual downtime (for CO use only)</asp:LinkButton>
                                                             Target Output
                                                         </td>
                                                         <td>
-                                                            <asp:TextBox ID="txtTarget" runat="server" Enabled="False"></asp:TextBox>
-                                                            <asp:RegularExpressionValidator ID="regvTarget" runat="server" 
+                                                            <asp:TextBox ID="txtTarget" runat="server"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="revTarget" runat="server" 
                                                                 ControlToValidate="txtTarget" ErrorMessage="You must enter an integer" 
-                                                                ValidationExpression="^\d+$" Enabled="False"></asp:RegularExpressionValidator>
-                                                            <asp:RequiredFieldValidator ID="rfvTarget" runat="server" ControlToValidate="txtTarget" Enabled="False" ErrorMessage="You must enter a target"></asp:RequiredFieldValidator>
+                                                                ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                                                         </td>
                                                     </tr>
                                                 </table>
