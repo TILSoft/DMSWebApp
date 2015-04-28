@@ -45,7 +45,7 @@ Partial Class zAdministration_CopyEntireLine
         'create an activity for the line
 
         Dim actadap As New ActivityTableAdapters.tblActivityTableAdapter
-        actadap.Insert(1, Smaxid, Now(), DateAdd(DateInterval.Day, 30, Now()), "StartLot", 0, 0, 0, 0, 0, 0, 0, Now(), 0, Now())
+        actadap.Insert(1, Smaxid, Now(), DateAdd(DateInterval.Day, 30, Now()), "StartLot", 0, 0, 0, 0, 0, 0, 0, Now(), 0, Now(), 0)
         Dim qact As New ActivityTableAdapters.QueriesTableAdapter
         Dim actid As Integer = qact.MaxActivityId
 

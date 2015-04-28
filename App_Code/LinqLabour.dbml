@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DMSDAQPROD3" Class="LinqLabourDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TIL-KM-01\SQLEXPRESS;Initial Catalog=DMSDAQ150423r2;User ID=DMSAdmin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DowntimeDBv2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblLabActivity" Member="tblLabActivities">
+    <Type Name="tblLabActivity">
+      <Column Name="LabourActivity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLabourUtilisation" Member="tblLabourUtilisations">
+    <Type Name="tblLabourUtilisation">
+      <Column Name="LabID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WkCtr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Signed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Shift" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DMSDAQ150423r2" Class="PFLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TIL-KM-01\SQLEXPRESS;Initial Catalog=DMSDAQ150423r2;User ID=DMSAdmin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DowntimeDBv2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblPFTasks" Member="tblPFTasks">
+    <Type Name="tblPFTask">
+      <Column Name="TaskID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TaskResp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaskPrecedent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TaskEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TaskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskPercentComplete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskDuration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskElapsedDays" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaskFixedStart" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPFTasksExecute" Member="tblPFTasksExecutes">
+    <Type Name="tblPFTasksExecute">
+      <Column Name="TaskExecuteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TaskResp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaskPrecedent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TaskEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TaskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskPercentComplete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskDuration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskElapsedDays" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaskFixedStart" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblActivity" Member="tblActivities">
+    <Type Name="tblActivity">
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ActivityType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocIDSymp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="endtime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="txtID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PreActivity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostActivity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Format" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GoodProduct" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TargetOutput" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Waste" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="StartSign" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartSignTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndSign" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndSigntime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StartCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFormat" Member="tblFormats">
+    <Type Name="tblFormat">
+      <Column Name="FormatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormatDesc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OperationRatePerMin" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="OperatiionRateBatch" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="FormatEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StdPersonnel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StdTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActivityType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormatLongDescription" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="outputMultiplier" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

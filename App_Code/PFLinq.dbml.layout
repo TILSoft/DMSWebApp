@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="PFLinq">
+  <DataContextMoniker Name="/PFLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b325e67b-2aa5-4424-af20-33773493cd87" absoluteBounds="0.875, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PFLinqDataContext/tblPFTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="755e6ed4-dd60-4505-893a-9084783f643c" absoluteBounds="0.89000000000000012, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a6ca6bc-70bb-4d65-a07e-ed8019e8703b" absoluteBounds="3.625, 0.5, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PFLinqDataContext/tblPFTasksExecute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e007afb-2913-4a4f-9a02-87b9f6ea6a5f" absoluteBounds="3.6399999999999997, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="13786144-2a22-4900-9681-5a97f00a0ea7" absoluteBounds="1.75, 4.625, 2, 4.2708154296875005">
+      <DataClassMoniker Name="/PFLinqDataContext/tblActivity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46bb97a8-f46d-455e-8360-8c3ae33ef148" absoluteBounds="1.7650000000000001, 5.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34a35129-eb11-4b30-886e-096caaa720a0" absoluteBounds="4.75, 5, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/PFLinqDataContext/tblFormat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcde5c9a-743e-432e-bbc5-2bc41f86fa41" absoluteBounds="4.765, 5.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

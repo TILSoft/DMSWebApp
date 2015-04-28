@@ -13,6 +13,9 @@ Partial Class controls_charttemp_daqTest
     Public ss5Count As Integer = 1
     Public ss5Start As DateTime
 
+
+
+
 #Region "Page Init"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -55,7 +58,7 @@ Partial Class controls_charttemp_daqTest
 
         odsDowntimeForLine.SelectParameters("LocID").DefaultValue = locadap.GetRCLocIDFromSymptomLocID(CInt(Session("WorkstationID")))
 
-
+     
     End Sub
 
     Sub LoadHeaderData()
@@ -102,7 +105,7 @@ Partial Class controls_charttemp_daqTest
                 actiadap.UpdateEndtimebyActivityID(Now(), activityid)
                 litDT.Text = "<strong style='color: #00CC66'><marquee id=mar1 direction=right>Line is currently in Change over</marquee></strong>"
                 lnkManualDowntime.Visible = True
-
+        
             Case 3
                 lblTxtID.Text = "Idle Time ID"
                 lblStatus.Text = "Idle time In progress"
@@ -116,8 +119,8 @@ Partial Class controls_charttemp_daqTest
 
         Call UpdateOutputValue()
         Call setShift()
-
-
+    
+   
     End Sub
 
     Sub setShift()
@@ -308,23 +311,7 @@ Partial Class controls_charttemp_daqTest
 
         dtAct = adapAct.GetMostRecentActivityDataByTime(rowEvent.EventStartTime, CInt(Session("workstationID")))
 
-        'if no activity is found, search for the next activity and assign that
-
-        If dtAct.Rows.Count = 0 Then
-
-        Else
-            rowAct = dtAct.Rows(0)
-        End If
-
-
-
-
-        Try
-
-        Catch ex As Exception
-            lblCurrentOutput.Text = "The downtime doesnt start in an activity, this can occur when an activity is deleted and there is a gap between activity times"
-
-        End Try
+        rowAct = dtAct.Rows(0)
     End Sub
     Protected Sub DAQTimeline1_ElementClicked(ByVal sender As Object, ByVal e As ElementClickArgs) Handles DAQTimeline1.ElementClicked
 
@@ -1171,19 +1158,19 @@ Partial Class controls_charttemp_daqTest
                     lblActChgLoginMsg.Text = "The event you selected must have finished to start a new lot"
                     pnlActChgAuthen.Visible = False
                 End If
-                '       rfvLot.Enabled = True
-                regvTarget.Enabled = True
+                rfvLot.Enabled = True
+                revTarget.Enabled = True
 
             Case 2
                 pnlStartChangeOver.Visible = True
                 pnlActChgAuthen.Visible = True
                 rfvLot.Enabled = False
-                regvTarget.Enabled = False
+                revTarget.Enabled = False
             Case 3
                 pnlStartIdleTime.Visible = True
                 pnlActChgAuthen.Visible = True
                 rfvLot.Enabled = False
-                regvTarget.Enabled = False
+                revTarget.Enabled = False
         End Select
         upActivityChg.Update()
 
@@ -1209,23 +1196,14 @@ Partial Class controls_charttemp_daqTest
 
 
         Dim unclosedDT As Integer = GetUnclosedDowntime()
+
         If unclosedDT > 0 Then
-            ' changed from false to true as there is a bug in the unclosed downtime functionality
+
             proceed = True
             lblActChgLoginMsg.Text = "You have " & unclosedDT & " unclosed downtimes for this batch, please close before proceeding"
 
-        End If
-
-        'if ddl lot selection check that a lot has been selected and populated the fields
-        If cbManualLot.Checked = False Then
-            If Len(lblItemcode.Text) < 1 Then
-                proceed = False
-                lblActChgLoginMsg.Text = "You need to select a lot from the drop down list to continue"
-            End If
 
         End If
-
-
 
 
         If proceed Then
@@ -1253,15 +1231,7 @@ Partial Class controls_charttemp_daqTest
 
                 Case 1
                     'start a new lot
-                    'Updated to allow for data to come from dropdown list and preselected values JD 20/04/15
-
-                    If cbManualLot.Checked = True Then
-                        adapAct.spInsertNewLot(rblNewActivity.SelectedValue, CInt(Session("workstationID")), rowEvent.EventEndtime, txtLot.Text, rowAct.ActivityID, ddlFormat.SelectedValue, txtTarget.Text, techuser, Now(), rowEvent.EventEndCount, txtItem.Text, actid)
-                    Else
-                        adapAct.spInsertNewLot(rblNewActivity.SelectedValue, CInt(Session("workstationID")), rowEvent.EventEndtime, ddlLotNumber.SelectedItem.Text, rowAct.ActivityID, ddlFormat.SelectedValue, lblTargOutput.Text, techuser, Now(), rowEvent.EventEndCount, lblItemcode.Text, actid)
-                    End If
-
-
+                    adapAct.spInsertNewLot(rblNewActivity.SelectedValue, CInt(Session("workstationID")), rowEvent.EventEndtime, txtLot.Text, rowAct.ActivityID, ddlFormat.SelectedValue, txtTarget.Text, techuser, Now(), rowEvent.EventEndCount, txtItem.Text, actid)
                     lnkManualDowntime.Visible = False
 
                 Case 2
@@ -1348,67 +1318,6 @@ Partial Class controls_charttemp_daqTest
 
     End Function
 
-    Protected Sub ddlLotNumber_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlLotNumber.SelectedIndexChanged
-
-
-        Dim workorderno As String = ddlLotNumber.SelectedValue
-        Dim lotno As String = ddlLotNumber.SelectedItem.Text
-
-        Dim adapWO As New ActivityTableAdapters.tblSAPWorkOrderInterfaceTableAdapter
-        Dim dtWO As Activity.tblSAPWorkOrderInterfaceDataTable
-
-        dtWO = adapWO.GetDataBy(Trim(workorderno))
-
-        If dtWO.Rows.Count > 0 Then
-
-            Dim rowWO As Activity.tblSAPWorkOrderInterfaceRow = dtWO.Rows(0)
-
-            lblItemcode.Text = rowWO.Itemcode
-
-            If Not IsDBNull(rowWO.Description) Then
-                lblItemdesc.Text = rowWO.Description
-            End If
-
-            lblTargOutput.Text = rowWO.Quantity / 1000
-            lblUnit.Text = rowWO.Unit
-
-        Else
-
-            lblActChgLoginMsg.Text = "No work order found for this lot no"
-
-        End If
-
-
-    End Sub
-
-    Protected Sub cbManualLot_CheckedChanged(sender As Object, e As EventArgs) Handles cbManualLot.CheckedChanged
-        'enable or disable manual lot entry
-
-        If cbManualLot.Checked = True Then
-            ddlLotNumber.Enabled = False
-            txtLot.Enabled = True
-            txtItem.Enabled = True
-            txtTarget.Enabled = True
-            rfvItem.Enabled = True
-            rfvLot.Enabled = True
-            regvTarget.Enabled = True
-            rfvTarget.Enabled = True
-
-        Else
-            ddlLotNumber.Enabled = True
-            txtLot.Enabled = False
-            txtItem.Enabled = False
-            txtTarget.Enabled = False
-            rfvItem.Enabled = False
-            rfvLot.Enabled = False
-            regvTarget.Enabled = False
-            rfvTarget.Enabled = False
-
-        End If
-
-
-
-    End Sub
 
 
 #End Region
@@ -1655,8 +1564,4 @@ Partial Class controls_charttemp_daqTest
     End Sub
 
 #End Region
-
-   
-  
-  
 End Class
