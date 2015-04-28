@@ -232,6 +232,7 @@
                             <td>
                                 Time Line Span (hours) :
                     <asp:DropDownList ID="ddlTimeLineSpan" runat="server" AutoPostBack="True">
+                        <asp:ListItem>24</asp:ListItem>
                         <asp:ListItem>0.5</asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
@@ -240,7 +241,6 @@
                         <asp:ListItem>5</asp:ListItem>
                         <asp:ListItem>6</asp:ListItem>
                         <asp:ListItem>12</asp:ListItem>
-                        <asp:ListItem>24</asp:ListItem>
                         <asp:ListItem Value="48"></asp:ListItem>
                         <asp:ListItem Value="72"></asp:ListItem>
                     </asp:DropDownList>

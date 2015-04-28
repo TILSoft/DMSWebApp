@@ -9,7 +9,7 @@
       <siteMapNode url="zAdministration\ManageShifts.aspx" title="Create Shifts"  description="" />
       <siteMapNode url="zAdministration\EditShifts.aspx" title="Edit Shifts"  description="" />
       <siteMapNode url="zAdministration\ManageUsers.aspx" title="Users"  description="" />
-      <siteMapNode url="zAdministration\EditLots.aspx" title="Edit Lots/Change overs"  description="" />
+      <siteMapNode url="zAdministration\EditActivities.aspx" title="Edit Lots/Change overs"  description="" />
       <siteMapNode url="zAdministration\EditDowntime.aspx" title="Edit Downtime"  description="" />
       <siteMapNode url="FrontEnd\SetWorkStation.aspx" title="Set WorkStation"  description="" />
       <siteMapNode url="zAdministration\Emailbyline.aspx" title="Email by line"  description="" />

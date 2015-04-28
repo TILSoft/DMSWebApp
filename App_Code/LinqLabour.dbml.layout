@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqLabour">
   <DataContextMoniker Name="/LinqLabourDataContext" />
   <nestedChildShapes>
-    <classShape Id="ad6c019c-59d3-4c6e-b8ab-4617963221ff" absoluteBounds="1.375, 3.125, 2, 1.0016910807291666">
+    <classShape Id="ad6c019c-59d3-4c6e-b8ab-4617963221ff" absoluteBounds="2.75, 0.5, 2, 1.0016910807291666">
       <DataClassMoniker Name="/LinqLabourDataContext/tblLabActivity" />
       <nestedChildShapes>
-        <elementListCompartment Id="fac404e6-10bd-4309-be60-bd00cdaa788a" absoluteBounds="1.3900000000000001, 3.585, 1.9700000000000002, 0.44169108072916663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fac404e6-10bd-4309-be60-bd00cdaa788a" absoluteBounds="2.765, 0.96, 1.9700000000000002, 0.44169108072916663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="9d20dda3-6b84-4ede-8c57-22c5d5c01d1b" absoluteBounds="0.5, 0.5, 2, 2.3478011067708335">
