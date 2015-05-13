@@ -1217,12 +1217,11 @@ Partial Class controls_charttemp_daqTest
         End If
 
         'if ddl lot selection check that a lot has been selected and populated the fields
-        If cbManualLot.Checked = False Then
+        If cbManualLot.Checked = False And rblNewActivity.SelectedValue = 1 Then
             If Len(lblItemcode.Text) < 1 Then
                 proceed = False
                 lblActChgLoginMsg.Text = "You need to select a lot from the drop down list to continue"
             End If
-
         End If
 
 
