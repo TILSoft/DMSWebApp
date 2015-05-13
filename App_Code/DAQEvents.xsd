@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblEventTableAdapter" GeneratorDataComponentClassName="tblEventTableAdapter" Name="tblEvent" UserDataComponentName="tblEventTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [tblEvent] WHERE (([EventID] = @Original_EventID))</CommandText>
@@ -79,7 +79,7 @@ FROM  tblEvent</CommandText>
               <Mapping SourceColumn="EventEndCount" DataSetColumn="EventEndCount" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT EventBlanketEventID, EventDeviceID, EventDowntimeID, EventEndCount, EventEndtime, EventID, EventLocID, EventStartCount, EventStartTime, EventStatus, EventTempSymptomID, EventType FROM tblEvent WHERE (EventID = @eventid)</CommandText>
@@ -89,7 +89,7 @@ FROM  tblEvent</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetEventAndBlanketedEvents" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetEventAndBlanketedEvents" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEventAndBlanketedEvents" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEvent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetEventAndBlanketedEvents" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetEventAndBlanketedEvents" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEventAndBlanketedEvents" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT EventBlanketEventID, EventDeviceID, EventDowntimeID, EventEndCount, EventEndtime, EventID, EventLocID, EventStartCount, EventStartTime, EventStatus, EventTempSymptomID, EventType FROM tblEvent WHERE (EventID = @eventid) OR (EventBlanketEventID = @eventid)</CommandText>
@@ -103,7 +103,7 @@ FROM  tblEvent</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="chartingTableAdapter" GeneratorDataComponentClassName="chartingTableAdapter" Name="charting" UserDataComponentName="chartingTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLocIDStartEndTime" GetMethodModifier="Public" GetMethodName="GetDataByLocIDStartEndTime" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataByLocIDStartEndTime" UserSourceName="GetDataByLocIDStartEndTime">
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLocIDStartEndTime" GetMethodModifier="Public" GetMethodName="GetDataByLocIDStartEndTime" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataByLocIDStartEndTime" UserSourceName="GetDataByLocIDStartEndTime">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [tblEvent] WHERE (([EventID] = @Original_EventID))</CommandText>
@@ -160,7 +160,7 @@ WHERE (EventLocID = @eventlocid) AND (EventStartTime &lt; @eventend) AND (EventE
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DowntimeManual.dbo.tblActivity" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DowntimeManual.dbo.tblActivity" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT tblActivity.ActivityID, COUNT(tblEvent.EventID) AS uncloseddowntime
@@ -181,9 +181,32 @@ GROUP BY tblActivity.ActivityID</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RunningEventListTableAdapter" GeneratorDataComponentClassName="RunningEventListTableAdapter" Name="RunningEventList" UserDataComponentName="RunningEventListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT a.EventID, a.EventStartTime, a.EventEndtime, b.LocDescription
+FROM     tblEvent AS a INNER JOIN
+                  tblLoc AS b ON a.EventLocID = b.LocID
+WHERE  (a.EventType = - 1)
+ORDER BY b.LocDescription</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EventID" DataSetColumn="EventID" />
+              <Mapping SourceColumn="EventStartTime" DataSetColumn="EventStartTime" />
+              <Mapping SourceColumn="EventEndtime" DataSetColumn="EventEndtime" />
+              <Mapping SourceColumn="LocDescription" DataSetColumn="LocDescription" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="UpdateEventStatus" MethodsParameterType="CLR" Modifier="Public" Name="UpdateEventStatus" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateEventStatus">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="UpdateEventStatus" MethodsParameterType="CLR" Modifier="Public" Name="UpdateEventStatus" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateEventStatus">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>UPDATE tblEvent
@@ -198,7 +221,7 @@ WHERE (EventID = @eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewEvent" MethodsParameterType="CLR" Modifier="Public" Name="InsertNewEvent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertNewEvent">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewEvent" MethodsParameterType="CLR" Modifier="Public" Name="InsertNewEvent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertNewEvent">
             <InsertCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>INSERT INTO tblEvent
@@ -214,7 +237,7 @@ VALUES (@EventStartTime,@EventLocID,@EventStatus,@EventType,@EventTempSymptomID)
               </DbCommand>
             </InsertCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="UpdateManualEventStatus" MethodsParameterType="CLR" Modifier="Public" Name="UpdateManualEventStatus" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateManualEventStatus">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="UpdateManualEventStatus" MethodsParameterType="CLR" Modifier="Public" Name="UpdateManualEventStatus" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateManualEventStatus">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>UPDATE tblEvent
@@ -232,7 +255,7 @@ WHERE (EventID = @eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEventEndTime" MethodsParameterType="CLR" Modifier="Public" Name="UpdateEventEndTime" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateEventEndTime">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEventEndTime" MethodsParameterType="CLR" Modifier="Public" Name="UpdateEventEndTime" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateEventEndTime">
             <UpdateCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>UPDATE tblEvent
@@ -245,7 +268,7 @@ WHERE (EventID = @eventid)</CommandText>
               </DbCommand>
             </UpdateCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatusByStartTimeLoc" MethodsParameterType="CLR" Modifier="Public" Name="UpdateStatusByStartTimeLoc" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateStatusByStartTimeLoc">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatusByStartTimeLoc" MethodsParameterType="CLR" Modifier="Public" Name="UpdateStatusByStartTimeLoc" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateStatusByStartTimeLoc">
             <UpdateCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>UPDATE tblEvent
@@ -260,7 +283,7 @@ WHERE (EventStartTime &gt; @startTime) AND (EventStartTime &lt; @endtime) AND (E
               </DbCommand>
             </UpdateCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BlanketEventID" MethodsParameterType="CLR" Modifier="Public" Name="BlanketEventID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="BlanketEventID">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BlanketEventID" MethodsParameterType="CLR" Modifier="Public" Name="BlanketEventID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="BlanketEventID">
             <UpdateCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>UPDATE tblEvent
@@ -274,7 +297,7 @@ WHERE (EventID = @Eventid)</CommandText>
               </DbCommand>
             </UpdateCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EventTimeSecs" MethodsParameterType="CLR" Modifier="Public" Name="EventTimeSecs" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="EventTimeSecs">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EventTimeSecs" MethodsParameterType="CLR" Modifier="Public" Name="EventTimeSecs" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="EventTimeSecs">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT DATEDIFF(s, EventStartTime, EventEndtime) AS DTSeconds
@@ -286,7 +309,7 @@ WHERE (EventID = @Eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="EventTypeByEventID" MethodsParameterType="CLR" Modifier="Public" Name="EventTypeByEventID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="EventTypeByEventID">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="EventTypeByEventID" MethodsParameterType="CLR" Modifier="Public" Name="EventTypeByEventID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="EventTypeByEventID">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>select Eventtype from tblevent where eventid = @eventid</CommandText>
@@ -296,7 +319,7 @@ WHERE (EventID = @Eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="EventStatusByEventID" MethodsParameterType="CLR" Modifier="Public" Name="EventStatusByEventID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="EventStatusByEventID">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="Downtime090603.dbo.tblEvent" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="EventStatusByEventID" MethodsParameterType="CLR" Modifier="Public" Name="EventStatusByEventID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="EventStatusByEventID">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>select eventstatus from tblevent where eventid = @eventid</CommandText>
@@ -306,7 +329,7 @@ WHERE (EventID = @Eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UnclosedDowntimes" MethodsParameterType="CLR" Modifier="Public" Name="UnclosedDowntimes" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UnclosedDowntimes">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UnclosedDowntimes" MethodsParameterType="CLR" Modifier="Public" Name="UnclosedDowntimes" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UnclosedDowntimes">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>select count(*) from tblevent where eventstatus = @evenstatus and eventtype = @eventtype and eventlocid = @eventlocid and eventstarttime &gt; @start and eventendtime &lt; @eventend</CommandText>
@@ -320,7 +343,7 @@ WHERE (EventID = @Eventid)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEventDevice" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="CurrentCount" MethodsParameterType="CLR" Modifier="Public" Name="CurrentCount" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="CurrentCount">
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="DMSDAQPROD3.dbo.tblEventDevice" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="CurrentCount" MethodsParameterType="CLR" Modifier="Public" Name="CurrentCount" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="CurrentCount">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT CounterValue
@@ -332,47 +355,73 @@ WHERE (DeviceLocID = @LocID)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
+          <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteEvent" MethodsParameterType="CLR" Modifier="Public" Name="DeleteEvent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="DeleteEvent">
+            <DeleteCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>DELETE from tblevent where eventid = @eventid</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="eventid" ColumnName="EventID" DataSourceName="DMSDAQPROD.dbo.tblEvent" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@eventid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EventID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                </Parameters>
+              </DbCommand>
+            </DeleteCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DAQEvents" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DAQEvents" msprop:Generator_DataSetName="DAQEvents">
+  <xs:element name="DAQEvents" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DAQEvents" msprop:Generator_UserDSName="DAQEvents">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblEvent" msprop:Generator_UserTableName="tblEvent" msprop:Generator_RowDeletedName="tblEventRowDeleted" msprop:Generator_RowChangedName="tblEventRowChanged" msprop:Generator_RowClassName="tblEventRow" msprop:Generator_RowChangingName="tblEventRowChanging" msprop:Generator_RowEvArgName="tblEventRowChangeEvent" msprop:Generator_RowEvHandlerName="tblEventRowChangeEventHandler" msprop:Generator_TableClassName="tblEventDataTable" msprop:Generator_TableVarName="tabletblEvent" msprop:Generator_RowDeletingName="tblEventRowDeleting" msprop:Generator_TablePropName="tblEvent">
+        <xs:element name="tblEvent" msprop:Generator_UserTableName="tblEvent" msprop:Generator_RowEvArgName="tblEventRowChangeEvent" msprop:Generator_TableVarName="tabletblEvent" msprop:Generator_TablePropName="tblEvent" msprop:Generator_RowDeletingName="tblEventRowDeleting" msprop:Generator_RowChangingName="tblEventRowChanging" msprop:Generator_RowDeletedName="tblEventRowDeleted" msprop:Generator_RowEvHandlerName="tblEventRowChangeEventHandler" msprop:Generator_TableClassName="tblEventDataTable" msprop:Generator_RowChangedName="tblEventRowChanged" msprop:Generator_RowClassName="tblEventRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="EventID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="EventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" type="xs:int" />
-              <xs:element name="EventStartTime" msprop:Generator_UserColumnName="EventStartTime" msprop:Generator_ColumnPropNameInRow="EventStartTime" msprop:Generator_ColumnVarNameInTable="columnEventStartTime" msprop:Generator_ColumnPropNameInTable="EventStartTimeColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EventEndtime" msprop:Generator_UserColumnName="EventEndtime" msprop:Generator_ColumnPropNameInRow="EventEndtime" msprop:Generator_ColumnVarNameInTable="columnEventEndtime" msprop:Generator_ColumnPropNameInTable="EventEndtimeColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EventLocID" msprop:Generator_UserColumnName="EventLocID" msprop:Generator_ColumnPropNameInRow="EventLocID" msprop:Generator_ColumnVarNameInTable="columnEventLocID" msprop:Generator_ColumnPropNameInTable="EventLocIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventStatus" msprop:Generator_UserColumnName="EventStatus" msprop:Generator_ColumnPropNameInRow="EventStatus" msprop:Generator_ColumnVarNameInTable="columnEventStatus" msprop:Generator_ColumnPropNameInTable="EventStatusColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventType" msprop:Generator_UserColumnName="EventType" msprop:Generator_ColumnPropNameInRow="EventType" msprop:Generator_ColumnVarNameInTable="columnEventType" msprop:Generator_ColumnPropNameInTable="EventTypeColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventDeviceID" msprop:Generator_UserColumnName="EventDeviceID" msprop:Generator_ColumnPropNameInRow="EventDeviceID" msprop:Generator_ColumnVarNameInTable="columnEventDeviceID" msprop:Generator_ColumnPropNameInTable="EventDeviceIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventDowntimeID" msprop:Generator_UserColumnName="EventDowntimeID" msprop:Generator_ColumnPropNameInRow="EventDowntimeID" msprop:Generator_ColumnVarNameInTable="columnEventDowntimeID" msprop:Generator_ColumnPropNameInTable="EventDowntimeIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventTempSymptomID" msprop:Generator_UserColumnName="EventTempSymptomID" msprop:Generator_ColumnPropNameInRow="EventTempSymptomID" msprop:Generator_ColumnVarNameInTable="columnEventTempSymptomID" msprop:Generator_ColumnPropNameInTable="EventTempSymptomIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventBlanketEventID" msprop:Generator_UserColumnName="EventBlanketEventID" msprop:Generator_ColumnVarNameInTable="columnEventBlanketEventID" msprop:Generator_ColumnPropNameInRow="EventBlanketEventID" msprop:Generator_ColumnPropNameInTable="EventBlanketEventIDColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventStartCount" msprop:Generator_UserColumnName="EventStartCount" msprop:Generator_ColumnPropNameInRow="EventStartCount" msprop:Generator_ColumnVarNameInTable="columnEventStartCount" msprop:Generator_ColumnPropNameInTable="EventStartCountColumn" type="xs:int" default="0" minOccurs="0" />
-              <xs:element name="EventEndCount" msprop:Generator_UserColumnName="EventEndCount" msprop:Generator_ColumnPropNameInRow="EventEndCount" msprop:Generator_ColumnVarNameInTable="columnEventEndCount" msprop:Generator_ColumnPropNameInTable="EventEndCountColumn" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="EventID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_UserColumnName="EventID" type="xs:int" />
+              <xs:element name="EventStartTime" msprop:Generator_ColumnVarNameInTable="columnEventStartTime" msprop:Generator_ColumnPropNameInRow="EventStartTime" msprop:Generator_ColumnPropNameInTable="EventStartTimeColumn" msprop:Generator_UserColumnName="EventStartTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EventEndtime" msprop:Generator_ColumnVarNameInTable="columnEventEndtime" msprop:Generator_ColumnPropNameInRow="EventEndtime" msprop:Generator_ColumnPropNameInTable="EventEndtimeColumn" msprop:Generator_UserColumnName="EventEndtime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EventLocID" msprop:Generator_ColumnVarNameInTable="columnEventLocID" msprop:Generator_ColumnPropNameInRow="EventLocID" msprop:Generator_ColumnPropNameInTable="EventLocIDColumn" msprop:Generator_UserColumnName="EventLocID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventStatus" msprop:Generator_ColumnVarNameInTable="columnEventStatus" msprop:Generator_ColumnPropNameInRow="EventStatus" msprop:Generator_ColumnPropNameInTable="EventStatusColumn" msprop:Generator_UserColumnName="EventStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="EventType" msprop:Generator_ColumnVarNameInTable="columnEventType" msprop:Generator_ColumnPropNameInRow="EventType" msprop:Generator_ColumnPropNameInTable="EventTypeColumn" msprop:Generator_UserColumnName="EventType" type="xs:int" minOccurs="0" />
+              <xs:element name="EventDeviceID" msprop:Generator_ColumnVarNameInTable="columnEventDeviceID" msprop:Generator_ColumnPropNameInRow="EventDeviceID" msprop:Generator_ColumnPropNameInTable="EventDeviceIDColumn" msprop:Generator_UserColumnName="EventDeviceID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventDowntimeID" msprop:Generator_ColumnVarNameInTable="columnEventDowntimeID" msprop:Generator_ColumnPropNameInRow="EventDowntimeID" msprop:Generator_ColumnPropNameInTable="EventDowntimeIDColumn" msprop:Generator_UserColumnName="EventDowntimeID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventTempSymptomID" msprop:Generator_ColumnVarNameInTable="columnEventTempSymptomID" msprop:Generator_ColumnPropNameInRow="EventTempSymptomID" msprop:Generator_ColumnPropNameInTable="EventTempSymptomIDColumn" msprop:Generator_UserColumnName="EventTempSymptomID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventBlanketEventID" msprop:Generator_ColumnVarNameInTable="columnEventBlanketEventID" msprop:Generator_ColumnPropNameInRow="EventBlanketEventID" msprop:Generator_ColumnPropNameInTable="EventBlanketEventIDColumn" msprop:Generator_UserColumnName="EventBlanketEventID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventStartCount" msprop:Generator_ColumnVarNameInTable="columnEventStartCount" msprop:Generator_ColumnPropNameInRow="EventStartCount" msprop:Generator_ColumnPropNameInTable="EventStartCountColumn" msprop:Generator_UserColumnName="EventStartCount" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="EventEndCount" msprop:Generator_ColumnVarNameInTable="columnEventEndCount" msprop:Generator_ColumnPropNameInRow="EventEndCount" msprop:Generator_ColumnPropNameInTable="EventEndCountColumn" msprop:Generator_UserColumnName="EventEndCount" type="xs:int" default="0" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="charting" msprop:Generator_UserTableName="charting" msprop:Generator_RowDeletedName="chartingRowDeleted" msprop:Generator_RowChangedName="chartingRowChanged" msprop:Generator_RowClassName="chartingRow" msprop:Generator_RowChangingName="chartingRowChanging" msprop:Generator_RowEvArgName="chartingRowChangeEvent" msprop:Generator_RowEvHandlerName="chartingRowChangeEventHandler" msprop:Generator_TableClassName="chartingDataTable" msprop:Generator_TableVarName="tablecharting" msprop:Generator_RowDeletingName="chartingRowDeleting" msprop:Generator_TablePropName="charting">
+        <xs:element name="charting" msprop:Generator_UserTableName="charting" msprop:Generator_RowEvArgName="chartingRowChangeEvent" msprop:Generator_TableVarName="tablecharting" msprop:Generator_TablePropName="charting" msprop:Generator_RowDeletingName="chartingRowDeleting" msprop:Generator_RowChangingName="chartingRowChanging" msprop:Generator_RowDeletedName="chartingRowDeleted" msprop:Generator_RowEvHandlerName="chartingRowChangeEventHandler" msprop:Generator_TableClassName="chartingDataTable" msprop:Generator_RowChangedName="chartingRowChanged" msprop:Generator_RowClassName="chartingRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="EventID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="EventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" type="xs:int" />
-              <xs:element name="EventStartTime" msprop:Generator_UserColumnName="EventStartTime" msprop:Generator_ColumnPropNameInRow="EventStartTime" msprop:Generator_ColumnVarNameInTable="columnEventStartTime" msprop:Generator_ColumnPropNameInTable="EventStartTimeColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EventEndtime" msprop:Generator_UserColumnName="EventEndtime" msprop:Generator_ColumnPropNameInRow="EventEndtime" msprop:Generator_ColumnVarNameInTable="columnEventEndtime" msprop:Generator_ColumnPropNameInTable="EventEndtimeColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EventStatus" msprop:Generator_UserColumnName="EventStatus" msprop:Generator_ColumnPropNameInRow="EventStatus" msprop:Generator_ColumnVarNameInTable="columnEventStatus" msprop:Generator_ColumnPropNameInTable="EventStatusColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="EventDowntimeID" msprop:Generator_UserColumnName="EventDowntimeID" msprop:Generator_ColumnVarNameInTable="columnEventDowntimeID" msprop:Generator_ColumnPropNameInRow="EventDowntimeID" msprop:Generator_ColumnPropNameInTable="EventDowntimeIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="EventID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_UserColumnName="EventID" type="xs:int" />
+              <xs:element name="EventStartTime" msprop:Generator_ColumnVarNameInTable="columnEventStartTime" msprop:Generator_ColumnPropNameInRow="EventStartTime" msprop:Generator_ColumnPropNameInTable="EventStartTimeColumn" msprop:Generator_UserColumnName="EventStartTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EventEndtime" msprop:Generator_ColumnVarNameInTable="columnEventEndtime" msprop:Generator_ColumnPropNameInRow="EventEndtime" msprop:Generator_ColumnPropNameInTable="EventEndtimeColumn" msprop:Generator_UserColumnName="EventEndtime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EventStatus" msprop:Generator_ColumnVarNameInTable="columnEventStatus" msprop:Generator_ColumnPropNameInRow="EventStatus" msprop:Generator_ColumnPropNameInTable="EventStatusColumn" msprop:Generator_UserColumnName="EventStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="EventDowntimeID" msprop:Generator_ColumnVarNameInTable="columnEventDowntimeID" msprop:Generator_ColumnPropNameInRow="EventDowntimeID" msprop:Generator_ColumnPropNameInTable="EventDowntimeIDColumn" msprop:Generator_UserColumnName="EventDowntimeID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="uncloseddowntime" msdata:ReadOnly="true" msprop:Generator_UserColumnName="uncloseddowntime" msprop:Generator_ColumnPropNameInRow="uncloseddowntime" msprop:Generator_ColumnVarNameInTable="columnuncloseddowntime" msprop:Generator_ColumnPropNameInTable="uncloseddowntimeColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="ActivityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" type="xs:int" />
+              <xs:element name="uncloseddowntime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnuncloseddowntime" msprop:Generator_ColumnPropNameInRow="uncloseddowntime" msprop:Generator_ColumnPropNameInTable="uncloseddowntimeColumn" msprop:Generator_UserColumnName="uncloseddowntime" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RunningEventList" msprop:Generator_TableClassName="RunningEventListDataTable" msprop:Generator_TableVarName="tableRunningEventList" msprop:Generator_TablePropName="RunningEventList" msprop:Generator_RowDeletingName="RunningEventListRowDeleting" msprop:Generator_RowChangingName="RunningEventListRowChanging" msprop:Generator_RowEvHandlerName="RunningEventListRowChangeEventHandler" msprop:Generator_RowDeletedName="RunningEventListRowDeleted" msprop:Generator_UserTableName="RunningEventList" msprop:Generator_RowChangedName="RunningEventListRowChanged" msprop:Generator_RowEvArgName="RunningEventListRowChangeEvent" msprop:Generator_RowClassName="RunningEventListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EventID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_UserColumnName="EventID" type="xs:int" />
+              <xs:element name="EventStartTime" msprop:Generator_ColumnVarNameInTable="columnEventStartTime" msprop:Generator_ColumnPropNameInRow="EventStartTime" msprop:Generator_ColumnPropNameInTable="EventStartTimeColumn" msprop:Generator_UserColumnName="EventStartTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EventEndtime" msprop:Generator_ColumnVarNameInTable="columnEventEndtime" msprop:Generator_ColumnPropNameInRow="EventEndtime" msprop:Generator_ColumnPropNameInTable="EventEndtimeColumn" msprop:Generator_UserColumnName="EventEndtime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LocDescription" msprop:Generator_ColumnVarNameInTable="columnLocDescription" msprop:Generator_ColumnPropNameInRow="LocDescription" msprop:Generator_ColumnPropNameInTable="LocDescriptionColumn" msprop:Generator_UserColumnName="LocDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -389,6 +438,10 @@ WHERE (DeviceLocID = @LocID)</CommandText>
     <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTable1" />
       <xs:field xpath="mstns:ActivityID" />
+    </xs:unique>
+    <xs:unique name="RunningEventList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RunningEventList" />
+      <xs:field xpath="mstns:EventID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
