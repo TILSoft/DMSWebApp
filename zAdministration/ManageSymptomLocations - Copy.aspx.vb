@@ -97,6 +97,12 @@ Partial Class zAdministration_ManageSymptomLocations
             ObjectDataSource1.InsertParameters("LocationStatus").DefaultValue = 1
             ObjectDataSource1.InsertParameters("ChangeOverStatus").DefaultValue = 0
 
+           
+
+
+
+
+
         Else
             'when indserting a new node set the parentlocid to that of the selected node
             ObjectDataSource1.InsertParameters("ParentLocID").DefaultValue = TreeView1.SelectedValue
@@ -138,6 +144,8 @@ Partial Class zAdministration_ManageSymptomLocations
             Dim selNode As TreeNode = TreeView1.SelectedNode
             TreeView1.Nodes.Clear()
             InitializeTreeView(1, Nothing)
+
+           
 
         Else
             'when a node is added, repopuplate the selectednodes list and expand
@@ -215,6 +223,42 @@ Partial Class zAdministration_ManageSymptomLocations
     Protected Sub formatsEditDS_Inserted(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles formatsEditDS.Inserted
         FromatGV.DataBind()
         formatsFV.ChangeMode(FormViewMode.Insert)
+
+
+
+
+        'if there is no activity for this line already then add an activity for this line
+
+        Dim actadap As New ActivityTableAdapters.tblActivityTableAdapter
+        Dim actDT As New Activity.tblActivityDataTable
+
+        actDT = actadap.GetDataByLoc(TreeView1.SelectedValue)
+
+        If actDT.Rows.Count = 0 Then
+
+            Dim formatAdap As New LocationsTableAdapters.tblFormatTableAdapter
+            Dim dtformat As New Locations.tblFormatDataTable
+
+            dtformat = formatAdap.GetDataByLocIDandActivity(TreeView1.SelectedValue, 1)
+
+            If dtformat.Rows.Count = 0 Then
+                lblMessage.Text = "You must create a format for the line"
+            Else
+                Dim row As Locations.tblFormatRow = dtformat.Rows(0)
+                Dim formatid As Integer = row.FormatID()
+                Dim actid As Integer
+
+                Dim actQadap As New ActivityTableAdapters.QueriesTableAdapter
+                actQadap.spInsertNewLot(1, TreeView1.SelectedValue, DateAdd(DateInterval.Day, -1, Now()), "InitialLot", 0, formatid, 0, 0, Now(), 0, 999999, actid)
+
+                Dim adapLoc As New LocationsTableAdapters.QueriesTableAdapter
+                adapLoc.UpdateLotStatusByLocID(actid, TreeView1.SelectedValue)
+
+            End If
+
+        End If
+
+
 
     End Sub
     Protected Sub formatsEditDS_Updated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles formatsEditDS.Updated

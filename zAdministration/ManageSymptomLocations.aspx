@@ -49,7 +49,7 @@
             <td valign="top" class="style3">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
-                        <cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" 
+                        <cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" 
                             Width="100%">
                             <cc1:TabPanel runat="server" HeaderText="Manage Locations" ID="TabPanel1">
                                 <ContentTemplate>
@@ -257,7 +257,7 @@
                                             <td>
                                                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
                                                     AutoGenerateColumns="False" DataKeyNames="SymptomID" DataSourceID="ObjectDataSource2"
-                                                    Width="100%">
+                                                    Width="100%" EnableModelValidation="True">
                                                     <Columns>
                                                         <asp:CommandField ShowSelectButton="True" SelectText="Edit" />
                                                         <asp:BoundField DataField="SymptomDesc" HeaderText="Symptom" SortExpression="SymptomDesc" />
@@ -310,7 +310,7 @@
                                         <tr>
                                             <td>
                                                 <asp:FormView ID="FormView2" runat="server" DataKeyNames="SymptomID" DataSourceID="ObjectDataSource3"
-                                                    DefaultMode="Insert">
+                                                    DefaultMode="Insert" EnableModelValidation="True">
                                                     <EditItemTemplate>
                                                         <h5>
                                                             Edit&#160;Symptom</h5>
@@ -511,7 +511,7 @@
                                             <td>
                                                 <asp:GridView ID="FromatGV" runat="server" AllowPaging="True" AllowSorting="True"
                                                     AutoGenerateColumns="False" DataKeyNames="FormatID" DataSourceID="formatsODS"
-                                                    Width="100%">
+                                                    Width="100%" EnableModelValidation="True">
                                                     <Columns>
                                                         <asp:CommandField ShowSelectButton="True" SelectText="Edit" />
                                                         <asp:BoundField DataField="FormatDesc" HeaderText="Description" SortExpression="FormatDesc" />
@@ -519,6 +519,7 @@
                                                             SortExpression="OperationRatePerMin" />
                                                         <asp:BoundField DataField="OperatiionRateBatch" HeaderText="Standard Batch Duration"
                                                             SortExpression="OperatiionRateBatch" />
+                                                        <asp:BoundField DataField="StdEfficientTime" HeaderText="StdEfficientTime" SortExpression="StdEfficientTime" />
                                                         <asp:CheckBoxField DataField="FormatEnabled" HeaderText="Enabled" SortExpression="FormatEnabled" />
                                                     </Columns>
                                                     <EmptyDataTemplate>
@@ -544,7 +545,7 @@
                                         <tr>
                                             <td>
                                                 <asp:FormView ID="formatsFV" runat="server" DataKeyNames="FormatID" DataSourceID="formatsEditDS"
-                                                    DefaultMode="Insert">
+                                                    DefaultMode="Insert" EnableModelValidation="True">
                                                     <EditItemTemplate>
                                                         <table class="style1">
                                                             <tr>
@@ -619,6 +620,12 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
+                                                                <td>SET</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("StdEfficientTime", "{0:N}") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
                                                                 <td>
                                                                     Enabled
                                                                 </td>
@@ -688,6 +695,12 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
+                                                                <td>SET</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("StdEfficientTime", "{0:N}") %>' />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
                                                                 <td>
                                                                     Enabled
                                                                 </td>
@@ -715,8 +728,8 @@
                                                         <asp:CheckBox ID="FormatEnabledCheckBox" runat="server" Checked='<%# Bind("FormatEnabled") %>'
                                                             Enabled="false" /><br />
                                                         <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
-                                                            Text="Edit" />&#160;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False"
-                                                                CommandName="Delete" Text="Delete" />&#160;<asp:LinkButton ID="NewButton" runat="server"
+                                                            Text="Edit" />&nbsp;&nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False"
+                                                                CommandName="Delete" Text="Delete" />&nbsp;&nbsp;<asp:LinkButton ID="NewButton" runat="server"
                                                                     CausesValidation="False" CommandName="New" Text="New" /></ItemTemplate>
                                                 </asp:FormView>
                                                 <asp:ObjectDataSource ID="formatsEditDS" runat="server" DeleteMethod="Delete" InsertMethod="Insert"
@@ -731,11 +744,12 @@
                                                         <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
                                                         <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
                                                         <asp:Parameter Name="FormatEnabled" Type="Boolean" />
-                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
                                                         <asp:Parameter Name="StdTime" Type="Int32" />
                                                         <asp:Parameter Name="ActivityType" Type="Int32" />
                                                         <asp:Parameter Name="FormatLongDescription" Type="String" />
                                                         <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                        <asp:Parameter Name="PFID" Type="Int32" />
+                                                        <asp:Parameter Name="StdEfficientTime" Type="Int32" />
                                                     </InsertParameters>
                                                     <SelectParameters>
                                                         <asp:ControlParameter ControlID="FromatGV" Name="FormatID" PropertyName="SelectedValue"
@@ -747,11 +761,12 @@
                                                         <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
                                                         <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
                                                         <asp:Parameter Name="FormatEnabled" Type="Boolean" />
-                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
                                                         <asp:Parameter Name="StdTime" Type="Int32" />
                                                         <asp:Parameter Name="ActivityType" Type="Int32" />
                                                         <asp:Parameter Name="FormatLongDescription" Type="String" />
                                                         <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                        <asp:Parameter Name="PFID" Type="Int32" />
+                                                        <asp:Parameter Name="StdEfficientTime" Type="Int32" />
                                                         <asp:Parameter Name="Original_FormatID" Type="Int32" />
                                                     </UpdateParameters>
                                                 </asp:ObjectDataSource>

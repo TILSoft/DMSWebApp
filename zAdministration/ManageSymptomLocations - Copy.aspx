@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="VB" MasterPageFile="~/Backend.master" AutoEventWireup="false"
-    CodeFile="ManageSymptomLocations_old.aspx.vb" Inherits="zAdministration_ManageSymptomLocations"
+    CodeFile="ManageSymptomLocations - Copy.aspx.vb" Inherits="zAdministration_ManageSymptomLocations"
     Title="Untitled Page" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%--<%@ Register assembly="System.Web.Extensions, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.DynamicData" tagprefix="cc2" %>--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
         .style1
@@ -26,12 +27,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </cc1:ToolkitScriptManager>
     <table class="style1">
         <tr>
             <td class="style4" valign="top" colspan="2">
                 <h2>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
                     Symptom Locations and Descriptions</h2>
             </td>
         </tr>
@@ -48,22 +49,8 @@
             <td valign="top" class="style3">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
-                        <cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" 
+                        <cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" 
                             Width="100%">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <cc1:TabPanel runat="server" HeaderText="Manage Locations" ID="TabPanel1">
                                 <ContentTemplate>
                                     <asp:FormView ID="FormView1" runat="server" DataKeyNames="LocID" DataSourceID="ObjectDataSource1"
@@ -91,10 +78,8 @@
                                                     </td>
                                                     <td>
                                                         <asp:TextBox ID="LocDescriptionTextBox" runat="server" Text='<%# Bind("LocDescription") %>'
-                                                            Width="450px" />
-                                                        <br />
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                                            ControlToValidate="LocDescriptionTextBox" 
+                                                            Width="450px" /><br />
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="LocDescriptionTextBox"
                                                             ErrorMessage="You must enter a location description"></asp:RequiredFieldValidator>
                                                     </td>
                                                 </tr>
@@ -111,8 +96,8 @@
                                                         Downtime ID
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox ID="DowntimeIDTextBox" runat="server" 
-                                                            Text='<%# Bind("DowntimeID") %>' Enabled="False" />
+                                                        <asp:TextBox ID="DowntimeIDTextBox" runat="server" Text='<%# Bind("DowntimeID") %>'
+                                                            Enabled="False" />
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -120,8 +105,8 @@
                                                         Lot Status
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox ID="LotStatusTextBox" runat="server" 
-                                                            Text='<%# Bind("LotStatus") %>' Enabled="False" />
+                                                        <asp:TextBox ID="LotStatusTextBox" runat="server" Text='<%# Bind("LotStatus") %>'
+                                                            Enabled="False" />
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -143,8 +128,8 @@
                                                 </tr>
                                             </table>
                                             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
-                                                Text="Update" onclick="UpdateButton_Click2" />&#160;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False"
-                                                    CommandName="Cancel" Text="Cancel" /><br />
+                                                Text="Update" OnClick="UpdateButton_Click2" />&#160;<asp:LinkButton ID="UpdateCancelButton"
+                                                    runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /><br />
                                             <br />
                                             <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Insert a New Symptom Location</asp:LinkButton><br />
                                             <br />
@@ -170,10 +155,8 @@
                                                     </td>
                                                     <td>
                                                         <asp:TextBox ID="LocDescriptionTextBox" runat="server" Text='<%# Bind("LocDescription") %>'
-                                                            Width="450px" />
-                                                        <br />
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                                            ControlToValidate="LocDescriptionTextBox" 
+                                                            Width="450px" /><br />
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="LocDescriptionTextBox"
                                                             ErrorMessage="You must enter a location description"></asp:RequiredFieldValidator>
                                                     </td>
                                                 </tr>
@@ -207,8 +190,7 @@
                                                 Text="Insert" OnClick="InsertButton_Click" />&#160;<asp:LinkButton ID="InsertCancelButton"
                                                     runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /><br />
                                             <br />
-                                            <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click"></asp:LinkButton>
-                                        </InsertItemTemplate>
+                                            <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click"></asp:LinkButton></InsertItemTemplate>
                                         <ItemTemplate>
                                             LocID:
                                             <asp:Label ID="LocIDLabel" runat="server" Text='<%# Eval("LocID") %>' /><br />
@@ -228,8 +210,7 @@
                                             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
                                                 Text="Edit" />&#160;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False"
                                                     CommandName="Delete" Text="Delete" />&#160;<asp:LinkButton ID="NewButton" runat="server"
-                                                        CausesValidation="False" CommandName="New" Text="New" />
-                                        </ItemTemplate>
+                                                        CausesValidation="False" CommandName="New" Text="New" /></ItemTemplate>
                                     </asp:FormView>
                                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete"
                                         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByLocID"
@@ -261,25 +242,8 @@
                                             <asp:Parameter Name="Original_LocID" Type="Int32" />
                                         </UpdateParameters>
                                     </asp:ObjectDataSource>
-                                
-                                
-                            
-                                
-                                
-                            
-                            
-                                
-                                
-                            
-                                
-                                
-                            
-                            
-                            </ContentTemplate>
-                            
-
-
-</cc1:TabPanel>
+                                </ContentTemplate>
+                            </cc1:TabPanel>
                             <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Symptoms for Location">
                                 <ContentTemplate>
                                     <table class="style1">
@@ -296,18 +260,13 @@
                                                     Width="100%">
                                                     <Columns>
                                                         <asp:CommandField ShowSelectButton="True" SelectText="Edit" />
-                                                        <asp:BoundField DataField="SymptomDesc" HeaderText="Symptom" 
-                                                            SortExpression="SymptomDesc" />
-                                                        <asp:BoundField DataField="DTType" HeaderText="Down Time Type" 
-                                                            SortExpression="DTType" />
-                                                        <asp:CheckBoxField DataField="SymptomEnabled" HeaderText="Enabled" 
-                                                            SortExpression="SymptomEnabled" />
-                                                        <asp:CheckBoxField DataField="SymptomQuickClose" HeaderText="Quick Close" 
-                                                            SortExpression="SymptomQuickClose" />
+                                                        <asp:BoundField DataField="SymptomDesc" HeaderText="Symptom" SortExpression="SymptomDesc" />
+                                                        <asp:BoundField DataField="DTType" HeaderText="Down Time Type" SortExpression="DTType" />
+                                                        <asp:CheckBoxField DataField="SymptomEnabled" HeaderText="Enabled" SortExpression="SymptomEnabled" />
+                                                        <asp:CheckBoxField DataField="SymptomQuickClose" HeaderText="Quick Close" SortExpression="SymptomQuickClose" />
                                                     </Columns>
                                                     <EmptyDataTemplate>
-                                                        There are no Symptoms for this location
-                                                    </EmptyDataTemplate>
+                                                        There are no Symptoms for this location</EmptyDataTemplate>
                                                 </asp:GridView>
                                                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="Delete"
                                                     OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByLocID" TypeName="LocationsTableAdapters.tblSymptomTableAdapter"
@@ -370,8 +329,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <asp:TextBox ID="SymptomDescTextBox" runat="server" Text='<%# Bind("SymptomDesc") %>'
-                                                                        Width="436px" />
-                                                                    <br />
+                                                                        Width="436px" /><br />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -379,8 +337,8 @@
                                                                     Loc ID
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" 
-                                                                        Text='<%# Bind("LocID") %>' Enabled="False" />
+                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" Text='<%# Bind("LocID") %>'
+                                                                        Enabled="False" />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -388,8 +346,7 @@
                                                                     DT Type
                                                                 </td>
                                                                 <td>
-                                                                    <asp:DropDownList ID="DropDownList1" runat="server" 
-                                                                        SelectedValue='<%# Bind("DTType") %>'>
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("DTType") %>'>
                                                                         <asp:ListItem Value="1">Normal Stop</asp:ListItem>
                                                                         <asp:ListItem Value="2">Short Stop</asp:ListItem>
                                                                     </asp:DropDownList>
@@ -413,17 +370,17 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    &nbsp;</td>
+                                                                    &#160;
+                                                                </td>
                                                                 <td>
-                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                                                        ControlToValidate="SymptomDescTextBox" 
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="SymptomDescTextBox"
                                                                         ErrorMessage="You must enter a symptom description" ValidationGroup="5"></asp:RequiredFieldValidator>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                         <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
-                                                            Text="Update" ValidationGroup="5" />&#160;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False"
-                                                                CommandName="Cancel" Text="Cancel" /><br />
+                                                            Text="Update" ValidationGroup="5" />&#160;<asp:LinkButton ID="UpdateCancelButton"
+                                                                runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /><br />
                                                         <br />
                                                         <br />
                                                         <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Insert New Symptom</asp:LinkButton><br />
@@ -450,8 +407,7 @@
                                                                     DT Type
                                                                 </td>
                                                                 <td>
-                                                                    <asp:DropDownList ID="DropDownList1" runat="server" 
-                                                                        SelectedValue='<%# Bind("DTType") %>'>
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("DTType") %>'>
                                                                         <asp:ListItem Value="1">Normal Stop</asp:ListItem>
                                                                         <asp:ListItem Value="2">Short Stop</asp:ListItem>
                                                                     </asp:DropDownList>
@@ -475,17 +431,18 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    &nbsp;</td>
+                                                                    &#160;
+                                                                </td>
                                                                 <td>
-                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                                                        ControlToValidate="SymptomDescTextBox" 
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="SymptomDescTextBox"
                                                                         ErrorMessage="You must enter a symptom description" ValidationGroup="3"></asp:RequiredFieldValidator>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
-                                                            OnClick="InsertButton_Click1" Text="Insert" ValidationGroup="3" />&#160;<asp:LinkButton ID="InsertCancelButton"
-                                                                runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /><br />
+                                                            OnClick="InsertButton_Click1" Text="Insert" ValidationGroup="3" />&#160;<asp:LinkButton
+                                                                ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                                                Text="Cancel" /><br />
                                                     </InsertItemTemplate>
                                                     <ItemTemplate>
                                                         SymptomID:
@@ -501,8 +458,7 @@
                                                             Enabled="false" /><br />
                                                         <br />
                                                         <asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete"
-                                                            Text="Delete" />
-                                                    </ItemTemplate>
+                                                            Text="Delete" /></ItemTemplate>
                                                 </asp:FormView>
                                                 DT type :&#160; 1 = unplanned, 2 = planned<br />
                                                 <asp:Label ID="lblMessage" runat="server" ForeColor="#FF3300"></asp:Label><br />
@@ -540,12 +496,9 @@
                                             </td>
                                         </tr>
                                     </table>
-                                
-                                
-                            </ContentTemplate>
-                            
-</cc1:TabPanel>
-                              <cc1:TabPanel ID="TabPanel3" runat="server" HeaderText="Manage Formats">
+                                </ContentTemplate>
+                            </cc1:TabPanel>
+                            <cc1:TabPanel ID="TabPanel3" runat="server" HeaderText="Manage Formats">
                                 <ContentTemplate>
                                     <table class="style1">
                                         <tr>
@@ -560,58 +513,33 @@
                                                     AutoGenerateColumns="False" DataKeyNames="FormatID" DataSourceID="formatsODS"
                                                     Width="100%">
                                                     <Columns>
-<asp:CommandField ShowSelectButton="True" SelectText="Edit" />
-<asp:BoundField DataField="FormatDesc" HeaderText="Description" SortExpression="FormatDesc" />
-<asp:BoundField DataField="OperationRatePerMin" HeaderText="Operation Rate Per Min"
+                                                        <asp:CommandField ShowSelectButton="True" SelectText="Edit" />
+                                                        <asp:BoundField DataField="FormatDesc" HeaderText="Description" SortExpression="FormatDesc" />
+                                                        <asp:BoundField DataField="OperationRatePerMin" HeaderText="Operation Rate Per Min"
                                                             SortExpression="OperationRatePerMin" />
-<asp:BoundField DataField="OperatiionRateBatch" HeaderText="Standard Batch Duration"
+                                                        <asp:BoundField DataField="OperatiionRateBatch" HeaderText="Standard Batch Duration"
                                                             SortExpression="OperatiionRateBatch" />
-<asp:BoundField DataField="outputMultiplier" HeaderText="Output Multiplier" 
-                                                            SortExpression="outputMultiplier" />
-<asp:CheckBoxField DataField="FormatEnabled" HeaderText="Enabled" SortExpression="FormatEnabled" />
+                                                        <asp:CheckBoxField DataField="FormatEnabled" HeaderText="Enabled" SortExpression="FormatEnabled" />
                                                     </Columns>
-<EmptyDataTemplate>
-                                                        There are no formats for this location. To create one click &quot;Add new format&quot;
-                                                    </EmptyDataTemplate>
+                                                    <EmptyDataTemplate>
+                                                        There are no formats for this location. To create one click &quot;Add new format&quot;</EmptyDataTemplate>
                                                 </asp:GridView>
-
                                                 <asp:ObjectDataSource ID="formatsODS" runat="server" DeleteMethod="Delete" OldValuesParameterFormatString="original_{0}"
-                                                    SelectMethod="GetDataByLocIDandActivityAll" 
-                                                    TypeName="LocationsTableAdapters.tblFormatTableAdapter" InsertMethod="Insert" 
-                                                    UpdateMethod="Update"><DeleteParameters>
-<asp:Parameter Name="Original_FormatID" Type="Int32" />
-                                                    </DeleteParameters>
-<InsertParameters>
-<asp:Parameter Name="FormatDesc" Type="String" />
-<asp:Parameter Name="LocID" Type="Int32" />
-<asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
-<asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
-<asp:Parameter Name="FormatEnabled" Type="Boolean" />
-<asp:Parameter Name="StdPersonnel" Type="Int32" />
-<asp:Parameter Name="StdTime" Type="Int32" />
-<asp:Parameter Name="ActivityType" Type="Int32" />
-<asp:Parameter Name="outputMultiplier" Type="Decimal" />
-                                                    </InsertParameters>
-<SelectParameters>
-<asp:ControlParameter ControlID="TreeView1" Name="LocID" PropertyName="SelectedValue"
-                                                            Type="Int32" />
-<asp:Parameter DefaultValue="1" Name="activityType" Type="Int32" />
-                                                    </SelectParameters>
-<UpdateParameters>
-                                                        <asp:Parameter Name="FormatDesc" Type="String" />
-                                                        <asp:Parameter Name="LocID" Type="Int32" />
-                                                        <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
-                                                        <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
-                                                        <asp:Parameter Name="FormatEnabled" Type="Boolean" />
-                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
-                                                        <asp:Parameter Name="StdTime" Type="Int32" />
-                                                        <asp:Parameter Name="ActivityType" Type="Int32" />
-                                                        <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                    SelectMethod="GetDataByLocIDandActivityAll" TypeName="LocationsTableAdapters.tblFormatTableAdapter">
+                                                    <DeleteParameters>
                                                         <asp:Parameter Name="Original_FormatID" Type="Int32" />
-                                                    </UpdateParameters>
+                                                    </DeleteParameters>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="TreeView1" Name="LocID" PropertyName="SelectedValue"
+                                                            Type="Int32" />
+                                                        <asp:Parameter DefaultValue="1" Name="activityType" Type="Int32" />
+                                                    </SelectParameters>
                                                 </asp:ObjectDataSource>
-
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                &nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -644,10 +572,20 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
+                                                                    Long Description
+                                                                </td>
+                                                                <td>
+                                                                    <asp:TextBox ID="FormatDescLongText" runat="server" Text='<%# Bind("FormatLongDescription") %>'
+                                                                        TextMode="MultiLine" Width="450px" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
                                                                     Location ID
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" Text='<%# Bind("LocID") %>' />
+                                                                    <asp:TextBox ID="LocIDTextBox" runat="server" ReadOnly="True" 
+                                                                        Text='<%# Bind("LocID") %>' Enabled="False" />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -655,14 +593,10 @@
                                                                     Operation rate per min
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="OperationRatePerMinTextBox" runat="server" 
-                                                                        Text='<%# Bind("OperationRatePerMin") %>' ><input 
-                                                                        ID="ctl36_OperationRatePerMinTextBox" name="ctl36$OperationRatePerMinTextBox" 
-                                                                        type="text" /></asp:TextBox>
-                                                                    <asp:RegularExpressionValidator
+                                                                    <asp:TextBox ID="OperationRatePerMinTextBox" runat="server" Text='<%# Bind("OperationRatePerMin") %>' /><asp:RegularExpressionValidator
                                                                         ID="RegularExpressionValidator1" runat="server" ControlToValidate="OperationRatePerMinTextBox"
-                                                                        ErrorMessage="Number must be a decimal " 
-                                                                        ValidationExpression="^((\d{1,8})\.(\d{1,3}))$" ValidationGroup="6"></asp:RegularExpressionValidator>
+                                                                        ErrorMessage="Number must be a decimal " ValidationExpression="^((\d{1,8})\.(\d{1,3}))$"
+                                                                        ValidationGroup="6"></asp:RegularExpressionValidator>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -672,16 +606,16 @@
                                                                 <td>
                                                                     <asp:TextBox ID="OperatiionRateBatchTextBox" runat="server" Text='<%# Bind("OperatiionRateBatch") %>' /><asp:RegularExpressionValidator
                                                                         ID="RegularExpressionValidator2" runat="server" ControlToValidate="OperatiionRateBatchTextBox"
-                                                                        ErrorMessage="Number must be a decimal " 
-                                                                        ValidationExpression="^((\d{1,8})\.(\d{1,3}))$" ValidationGroup="6"></asp:RegularExpressionValidator>
+                                                                        ErrorMessage="Number must be a decimal " ValidationExpression="^((\d{1,8})\.(\d{1,3}))$"
+                                                                        ValidationGroup="6"></asp:RegularExpressionValidator>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                 Output Multiplier</td>
+                                                                    Output Multiplier</td>
                                                                 <td>
                                                                     <asp:TextBox ID="TextBox4" runat="server" 
-                                                                        Text='<%# Bind("outputMultiplier") %>'></asp:TextBox>
+                                                                        Text='<%# Bind("outputMultiplier") %>' />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -694,23 +628,22 @@
                                                             </tr>
                                                         </table>
                                                         <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
-                                                            Text="Update" OnClick="UpdateButton_Click1" ValidationGroup="6" />&#160;<asp:LinkButton ID="UpdateCancelButton"
-                                                                runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /><br />
+                                                            Text="Update" OnClick="UpdateButton_Click1" ValidationGroup="6" />&#160;<asp:LinkButton
+                                                                ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                                                Text="Cancel" /><br />
                                                         <br />
-                                                    
                                                     </EditItemTemplate>
-<InsertItemTemplate>
+                                                    <InsertItemTemplate>
                                                         <table class="style1" style="width: 75%">
                                                             <tr>
                                                                 <td colspan="2">
-                                                                    
                                                                     <h5>
                                                                         Insert a new format</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                   Description
+                                                                    Description
                                                                 </td>
                                                                 <td>
                                                                     <asp:TextBox ID="FormatDescTextBox" runat="server" Text='<%# Bind("FormatDesc") %>'
@@ -719,50 +652,55 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                 
+                                                                    Long Description</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="FormatDescLongText" runat="server" 
+                                                                        Text='<%# Bind("FormatLongDescription") %>' TextMode="MultiLine" 
+                                                                        Width="450px" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
                                                                     Operation rate per min
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="OperationRatePerMinTextBox" runat="server" Text='<%# Bind("OperationRatePerMin") %>' /><asp:RegularExpressionValidator
-                                                                        ID="RegularExpressionValidator1" runat="server" ControlToValidate="OperationRatePerMinTextBox"
-                                                                        ErrorMessage="Number must be a decimal " 
-                                                                        ValidationExpression="^((\d{1,8})\.(\d{1,2}))$" ValidationGroup="1"></asp:RegularExpressionValidator>
+                                                                    <asp:TextBox ID="OperationRatePerMinTextBox" runat="server" Text='<%# Bind("OperationRatePerMin") %>' />
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                Normal Batch time (do not use)
+                                                                    Normal Batch time (do not use)
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="OperatiionRateBatchTextBox" runat="server" Text='<%# Bind("OperatiionRateBatch") %>' /><asp:RegularExpressionValidator
+                                                                    <asp:TextBox ID="OperatiionRateBatchTextBox" runat="server" Text='<%# Bind("OperatiionRateBatch") %>' />
+                                                                    <asp:RegularExpressionValidator
                                                                         ID="RegularExpressionValidator2" runat="server" ControlToValidate="OperationRatePerMinTextBox"
-                                                                        ErrorMessage="Number must be a decimal " 
-                                                                        ValidationExpression="^((\d{1,8})\.(\d{1,2}))$" ValidationGroup="1"></asp:RegularExpressionValidator>
+                                                                        ErrorMessage="Number must be a decimal " ValidationExpression="^((\d{1,8})\.(\d{1,2}))$"
+                                                                        ValidationGroup="1" Enabled="False"></asp:RegularExpressionValidator>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    Output Multiplier</td>
+                                                                    Output multiplier</td>
                                                                 <td>
                                                                     <asp:TextBox ID="TextBox4" runat="server" 
-                                                                        Text='<%# Bind("outputMultiplier") %>'></asp:TextBox>
-                                                                   </td>
+                                                                        Text='<%# Bind("outputMultiplier") %>' />
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     Enabled
                                                                 </td>
                                                                 <td>
-                                                                    <asp:CheckBox ID="FormatEnabledCheckBox" runat="server" 
-                                                                        Checked='<%# Bind("FormatEnabled") %>' />
+                                                                    <asp:CheckBox ID="FormatEnabledCheckBox" runat="server" Checked='<%# Bind("FormatEnabled") %>' />
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
-                                                            OnClick="InsertButton_Click2" Text="Insert" ValidationGroup="1" />&#160;<asp:LinkButton ID="InsertCancelButton"
-                                                                runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-                                                    </InsertItemTemplate>
-<ItemTemplate>
+                                                            OnClick="InsertButton_Click2" Text="Insert" ValidationGroup="1" />&#160;<asp:LinkButton
+                                                                ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                                                Text="Cancel" /></InsertItemTemplate>
+                                                    <ItemTemplate>
                                                         FormatID:
                                                         <asp:Label ID="FormatIDLabel" runat="server" Text='<%# Eval("FormatID") %>' /><br />
                                                         FormatDesc:
@@ -770,53 +708,57 @@
                                                         LocID:
                                                         <asp:Label ID="LocIDLabel" runat="server" Text='<%# Bind("LocID") %>' /><br />
                                                         OperationRatePerMin:
-                                                        <asp:Label ID="OperationRatePerMinLabel" runat="server" Text='<%# Bind("OperationRatePerMin") %>' />
-                                                        <br />
+                                                        <asp:Label ID="OperationRatePerMinLabel" runat="server" Text='<%# Bind("OperationRatePerMin") %>' /><br />
                                                         OperatiionRateBatch:
-                                                        <asp:Label ID="OperatiionRateBatchLabel" runat="server" Text='<%# Bind("OperatiionRateBatch") %>' />
-                                                        <br />
+                                                        <asp:Label ID="OperatiionRateBatchLabel" runat="server" Text='<%# Bind("OperatiionRateBatch") %>' /><br />
                                                         FormatEnabled:
                                                         <asp:CheckBox ID="FormatEnabledCheckBox" runat="server" Checked='<%# Bind("FormatEnabled") %>'
                                                             Enabled="false" /><br />
                                                         <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
                                                             Text="Edit" />&#160;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False"
                                                                 CommandName="Delete" Text="Delete" />&#160;<asp:LinkButton ID="NewButton" runat="server"
-                                                                    CausesValidation="False" CommandName="New" Text="New" />
-                                                    </ItemTemplate>
+                                                                    CausesValidation="False" CommandName="New" Text="New" /></ItemTemplate>
                                                 </asp:FormView>
-
-                                                <asp:ObjectDataSource ID="formatsEditDS" runat="server" DeleteMethod="Delete"
+                                                <asp:ObjectDataSource ID="formatsEditDS" runat="server" DeleteMethod="Delete" InsertMethod="Insert"
                                                     OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBy" TypeName="LocationsTableAdapters.tblFormatTableAdapter"
                                                     UpdateMethod="Update">
                                                     <DeleteParameters>
-<asp:Parameter Name="Original_FormatID" Type="Int32" />
+                                                        <asp:Parameter Name="Original_FormatID" Type="Int32" />
                                                     </DeleteParameters>
-<SelectParameters>
-<asp:ControlParameter ControlID="FromatGV" Name="FormatID" PropertyName="SelectedValue"
+                                                    <InsertParameters>
+                                                        <asp:Parameter Name="FormatDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
+                                                        <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
+                                                        <asp:Parameter Name="FormatEnabled" Type="Boolean" />
+                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
+                                                        <asp:Parameter Name="StdTime" Type="Int32" />
+                                                        <asp:Parameter Name="ActivityType" Type="Int32" />
+                                                        <asp:Parameter Name="FormatLongDescription" Type="String" />
+                                                        <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                    </InsertParameters>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="FromatGV" Name="FormatID" PropertyName="SelectedValue"
                                                             Type="Int32" />
                                                     </SelectParameters>
-<UpdateParameters>
-<asp:Parameter Name="FormatDesc" Type="String" />
-<asp:Parameter Name="LocID" Type="Int32" />
-<asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
-<asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
-<asp:Parameter Name="FormatEnabled" Type="Boolean" />
-<asp:Parameter Name="StdPersonnel" Type="Int32" />
-<asp:Parameter Name="StdTime" Type="Int32" />
-<asp:Parameter Name="ActivityType" Type="Int32" />
-<asp:Parameter Name="outputMultiplier" Type="Decimal" />
-<asp:Parameter Name="FormatLongDescription" Type="String" />
-<asp:Parameter Name="Original_FormatID" Type="Int32" />
+                                                    <UpdateParameters>
+                                                        <asp:Parameter Name="FormatDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
+                                                        <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
+                                                        <asp:Parameter Name="FormatEnabled" Type="Boolean" />
+                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
+                                                        <asp:Parameter Name="StdTime" Type="Int32" />
+                                                        <asp:Parameter Name="ActivityType" Type="Int32" />
+                                                        <asp:Parameter Name="FormatLongDescription" Type="String" />
+                                                        <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                        <asp:Parameter Name="Original_FormatID" Type="Int32" />
                                                     </UpdateParameters>
                                                 </asp:ObjectDataSource>
-
                                                 <br />
-                                                <asp:LinkButton ID="lnkFormatInsert" runat="server">Insert a new format</asp:LinkButton>
-
-                                                <br />
+                                                <asp:LinkButton ID="lnkFormatInsert" runat="server">Insert a new format</asp:LinkButton><br />
                                                 <br />
                                                 <asp:Label ID="lblerror" runat="server" ForeColor="Red"></asp:Label>
-
                                             </td>
                                         </tr>
                                         <tr>
@@ -825,11 +767,8 @@
                                             </td>
                                         </tr>
                                     </table>
-                                
-                                
-                            </ContentTemplate>
-                            
-</cc1:TabPanel>
+                                </ContentTemplate>
+                            </cc1:TabPanel>
                             <cc1:TabPanel ID="TabPanel5" runat="server" HeaderText="Change Over Types">
                                 <ContentTemplate>
                                     <table class="style5" width="100%">
@@ -878,23 +817,19 @@
                                                     DataKeyNames="FormatID" DataSourceID="ODSChangeOvers" AllowSorting="True" Width="100%">
                                                     <Columns>
                                                         <asp:CommandField ShowSelectButton="True" />
-                                                        <asp:BoundField DataField="FormatID" HeaderText="ID" InsertVisible="False"
-                                                            ReadOnly="True" SortExpression="FormatID" />
-                                                        <asp:BoundField DataField="FormatDesc" HeaderText="Format" 
-                                                            SortExpression="FormatDesc" />
-                                                        <asp:CheckBoxField DataField="FormatEnabled" HeaderText="Enabled" 
-                                                            SortExpression="FormatEnabled" />
-                                                        <asp:BoundField DataField="StdPersonnel" HeaderText="Std. Personnel" 
-                                                            SortExpression="StdPersonnel" />
-                                                        <asp:BoundField DataField="StdTime" HeaderText="Std. Time" 
-                                                            SortExpression="StdTime" />
+                                                        <asp:BoundField DataField="FormatID" HeaderText="ID" InsertVisible="False" ReadOnly="True"
+                                                            SortExpression="FormatID" />
+                                                        <asp:BoundField DataField="FormatDesc" HeaderText="Format" SortExpression="FormatDesc" />
+                                                        <asp:CheckBoxField DataField="FormatEnabled" HeaderText="Enabled" SortExpression="FormatEnabled" />
+                                                        <asp:BoundField DataField="StdPersonnel" HeaderText="Std. Personnel" SortExpression="StdPersonnel" />
+                                                        <asp:BoundField DataField="StdTime" HeaderText="Std. Time" SortExpression="StdTime" />
                                                     </Columns>
                                                 </asp:GridView>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                &#160;
+                                                &#160;&#160;
                                             </td>
                                         </tr>
                                         <tr>
@@ -927,10 +862,11 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    Long Desc</td>
+                                                                    Long description</td>
                                                                 <td>
-                                                                    <asp:TextBox ID="TextBox6" runat="server" 
-                                                                        Text='<%# Bind("FormatLongDescription") %>' TextMode="MultiLine" Width="322px"></asp:TextBox>
+                                                                    <asp:TextBox ID="FormatDescLongText" runat="server" 
+                                                                        Text='<%# Bind("FormatLongDescription") %>' TextMode="MultiLine" 
+                                                                        Width="450px" />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -959,12 +895,13 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    &#160;
+                                                                    &#160;&#160;
                                                                 </td>
                                                                 <td>
                                                                     <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
-                                                                        OnClick="UpdateButton_Click" Text="Update" ValidationGroup="2" />&#160;&#160;<asp:LinkButton ID="UpdateCancelButton"
-                                                                            runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                                                        OnClick="UpdateButton_Click" Text="Update" ValidationGroup="2" />&#160;&#160;<asp:LinkButton
+                                                                            ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                                                            Text="Cancel" />
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -987,10 +924,11 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    Long Desc</td>
+                                                                    Long Description</td>
                                                                 <td>
-                                                                    <asp:TextBox ID="TextBox6" runat="server" 
-                                                                        Text='<%# Bind("FormatLongDescription") %>' TextMode="MultiLine" Width="322px"></asp:TextBox>
+                                                                    <asp:TextBox ID="FormatDescLongText" runat="server" 
+                                                                        Text='<%# Bind("FormatLongDescription") %>' TextMode="MultiLine" 
+                                                                        Width="450px" />
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -1011,6 +949,12 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
+                                                                    Output Multiplier</td>
+                                                                <td>
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
                                                                     Enabled
                                                                 </td>
                                                                 <td>
@@ -1019,16 +963,16 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    &#160;
+                                                                    &#160;&#160;
                                                                 </td>
                                                                 <td>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
-                                                            OnClick="InsertButton_Click4" Text="Insert" ValidationGroup="2" />&#160;<asp:LinkButton ID="InsertCancelButton"
-                                                                runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-                                                    </InsertItemTemplate>
+                                                            OnClick="InsertButton_Click4" Text="Insert" ValidationGroup="2" />&#160;<asp:LinkButton
+                                                                ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                                                Text="Cancel" /></InsertItemTemplate>
                                                     <ItemTemplate>
                                                         FormatID:
                                                         <asp:Label ID="FormatIDLabel" runat="server" Text='<%# Eval("FormatID") %>' /><br />
@@ -1052,8 +996,7 @@
                                                         <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
                                                             Text="Edit" />&#160;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False"
                                                                 CommandName="Delete" Text="Delete" />&#160;<asp:LinkButton ID="NewButton" runat="server"
-                                                                    CausesValidation="False" CommandName="New" Text="New" />
-                                                    </ItemTemplate>
+                                                                    CausesValidation="False" CommandName="New" Text="New" /></ItemTemplate>
                                                 </asp:FormView>
                                                 <asp:ObjectDataSource ID="ODSChangeOverEdit" runat="server" DeleteMethod="Delete"
                                                     InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBy"
@@ -1061,22 +1004,6 @@
                                                     <DeleteParameters>
                                                         <asp:Parameter Name="Original_FormatID" Type="Int32" />
                                                     </DeleteParameters>
-                                                    <InsertParameters>
-                                                        <asp:Parameter Name="FormatDesc" Type="String" />
-                                                        <asp:Parameter Name="LocID" Type="Int32" />
-                                                        <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
-                                                        <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
-                                                        <asp:Parameter Name="FormatEnabled" Type="Boolean" />
-                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
-                                                        <asp:Parameter Name="StdTime" Type="Int32" />
-                                                        <asp:Parameter Name="ActivityType" Type="Int32" />
-                                                        <asp:Parameter Name="outputMultiplier" Type="Decimal" />
-                                                        <asp:Parameter Name="FormatLongDescription" Type="String" />
-                                                    </InsertParameters>
-                                                    <SelectParameters>
-                                                        <asp:ControlParameter ControlID="GridView3" Name="FormatID" PropertyName="SelectedValue"
-                                                            Type="Int32" />
-                                                    </SelectParameters>
                                                     <UpdateParameters>
                                                         <asp:Parameter Name="FormatDesc" Type="String" />
                                                         <asp:Parameter Name="LocID" Type="Int32" />
@@ -1090,6 +1017,22 @@
                                                         <asp:Parameter Name="FormatLongDescription" Type="String" />
                                                         <asp:Parameter Name="Original_FormatID" Type="Int32" />
                                                     </UpdateParameters>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="GridView3" Name="FormatID" PropertyName="SelectedValue"
+                                                            Type="Int32" />
+                                                    </SelectParameters>
+                                                    <InsertParameters>
+                                                        <asp:Parameter Name="FormatDesc" Type="String" />
+                                                        <asp:Parameter Name="LocID" Type="Int32" />
+                                                        <asp:Parameter Name="OperationRatePerMin" Type="Decimal" />
+                                                        <asp:Parameter Name="OperatiionRateBatch" Type="Decimal" />
+                                                        <asp:Parameter Name="FormatEnabled" Type="Boolean" />
+                                                        <asp:Parameter Name="StdPersonnel" Type="Int32" />
+                                                        <asp:Parameter Name="StdTime" Type="Int32" />
+                                                        <asp:Parameter Name="ActivityType" Type="Int32" />
+                                                        <asp:Parameter Name="outputMultiplier" Type="Decimal" />
+                                                        <asp:Parameter Name="FormatLongDescription" Type="String" />
+                                                    </InsertParameters>
                                                 </asp:ObjectDataSource>
                                             </td>
                                         </tr>
@@ -1099,11 +1042,8 @@
                                             </td>
                                         </tr>
                                     </table>
-                                
-                                
-                            </ContentTemplate>
-                            
-</cc1:TabPanel>
+                                </ContentTemplate>
+                            </cc1:TabPanel>
                             <cc1:TabPanel ID="TabPanel4" runat="server" HeaderText="Root Cause Links">
                                 <ContentTemplate>
                                     Use this table to check the symptom location has connected correctly to the root
@@ -1119,12 +1059,8 @@
                                     <asp:ObjectDataSource ID="RootLinkODS" runat="server" OldValuesParameterFormatString="original_{0}"
                                         SelectMethod="GetData" TypeName="LocationsTableAdapters.tblloclinkdetailTableAdapter">
                                     </asp:ObjectDataSource>
-                                
-                                
-                            </ContentTemplate>
-                            
-</cc1:TabPanel>
-                            &nbsp;
+                                </ContentTemplate>
+                            </cc1:TabPanel>
                         </cc1:TabContainer>
                     </ContentTemplate>
                     <Triggers>

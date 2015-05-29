@@ -179,7 +179,6 @@ Partial Class zAdministration_ManageSymptomLocations
     Protected Sub GridView1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridView1.SelectedIndexChanged
         FormView2.ChangeMode(FormViewMode.Edit)
         FormView2.DataBind()
-
     End Sub
     Protected Sub LinkButton4_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         FormView2.ChangeMode(FormViewMode.Insert)
@@ -223,9 +222,6 @@ Partial Class zAdministration_ManageSymptomLocations
     Protected Sub formatsEditDS_Inserted(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles formatsEditDS.Inserted
         FromatGV.DataBind()
         formatsFV.ChangeMode(FormViewMode.Insert)
-
-
-
 
         'if there is no activity for this line already then add an activity for this line
 
@@ -308,13 +304,9 @@ Partial Class zAdministration_ManageSymptomLocations
 
     End Sub
 
-
     Protected Sub UpdateButton_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         ODSChangeOverEdit.UpdateParameters("LocID").DefaultValue = TreeView1.SelectedValue
         ODSChangeOverEdit.UpdateParameters("ActivityType").DefaultValue = 2
-
-
-
     End Sub
 
     Protected Sub InsertButton_Click4(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -367,6 +359,10 @@ Partial Class zAdministration_ManageSymptomLocations
     End Sub
 
     Protected Sub UpdateButton_Click2(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Protected Sub formatsFV_PageIndexChanging(sender As Object, e As FormViewPageEventArgs) Handles formatsFV.PageIndexChanging
 
     End Sub
 End Class

@@ -539,3 +539,11 @@ add column itemcode to activities table
 
 
 1) added item code addition to lot change in DAQ system
+
+
+Version 5.0
+
+updates to allow recording of SET in formats and along with lots
+	Steps
+		- update tblactivites and tblformats with SET fields
+		- update trigfixedstdtime to catch SET fieldds against lot

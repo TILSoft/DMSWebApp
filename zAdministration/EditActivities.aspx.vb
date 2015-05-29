@@ -27,45 +27,49 @@ Partial Class DataVisualisation_ActivitySearch
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-
             txtStart.Text = DateAdd(DateInterval.Month, -1, Now())
             txtEnd.Text = Now()
             txtSearc.Text = "%"
             txtSearc.Enabled = False
-
-
-
         End If
     End Sub
 
     Protected Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
-        If Left(e.CommandName, 1) = "x" Then
+        lblError.Text = ""
+
+        Dim idx As Integer = Convert.ToInt32(e.CommandArgument)
+
+        If idx < GridView1.Rows.Count() - 1 Then
 
 
-            Dim actID As Integer = GridView1.DataKeys(e.CommandArgument).Value
-            hdnActID.Value = actID
+            If Left(e.CommandName, 1) = "x" Then
 
-            If e.CommandName = "xEdit" Then
+                Dim actID As Integer = GridView1.DataKeys(e.CommandArgument).Value
+                hdnActID.Value = actID
 
-                ModalPopupExtender1.Show()
-                dvActEdit.DataBind()
-                dvActEdit.ChangeMode(DetailsViewMode.Edit)
+                If e.CommandName = "xEdit" Then
 
-            ElseIf e.CommandName = "xDelete" Then
+                    ModalPopupExtender1.Show()
+                    dvActEdit.DataBind()
+                    dvActEdit.ChangeMode(DetailsViewMode.Edit)
 
-                Call deleteActivity()
+                ElseIf e.CommandName = "xDelete" Then
 
-            ElseIf e.CommandName = "xAdd" Then
+                    Call deleteActivity()
 
-                ModalPopupExtender1.Show()
-                dvActEdit.DataBind()
-                dvActEdit.ChangeMode(DetailsViewMode.Insert)
+                ElseIf e.CommandName = "xAdd" Then
+
+                    ModalPopupExtender1.Show()
+                    dvActEdit.DataBind()
+                    dvActEdit.ChangeMode(DetailsViewMode.Insert)
+
+                End If
 
             End If
 
+        Else
+            lblError.Text = "You cant edit an activity at the end of the list or that is still in progress. Select a wider date range or close the activity"
         End If
-
-
 
     End Sub
 

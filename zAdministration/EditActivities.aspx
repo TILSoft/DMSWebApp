@@ -117,6 +117,9 @@
             <td colspan="4">
             
                
+                <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+            
+               
                 <br />
               
                     
