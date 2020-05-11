@@ -355,10 +355,15 @@ WHERE (tblActivity_2.ActivityID = @ActivityID)</CommandText>
               <DbSource ConnectionRef="DowntimeDBv2ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDateAndLoc" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByDateAndLoc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDateAndLoc" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT tblActivity_2.ActivityID, tblActivityType.ActivityDesc, tblLoc.LocDescription, tblFormat.FormatDesc, tblActivity_2.StartTime, tblActivity_2.endtime, 
+                    <CommandText>SELECT tblActivity_2.ActivityID,
+					tblActivityType.ActivityDesc,
+					tblLoc.LocDescription,
+					tblFormat.FormatDesc,
+					tblActivity_2.StartTime,
+					tblActivity_2.endtime, 
                   tblActivity_2.txtID, tblActivity_2.GoodProduct, tblActivity_2.TargetOutput, tblActivity_2.Waste, tblUser.Username AS startsign, tblUser_1.Username AS endsign, 
                   tblActivity_2.StartSignTime, tblActivity_2.EndSigntime, dbo.ActivityTime(tblLoc.LocID, tblActivity_2.StartTime, tblActivity_2.endtime, tblActivity_2.ActivityType) 
-                  AS ActualActivitytime, dbo.ShiftsForActivity(tblActivity_2.ActivityID) AS Shifts
+                  AS ActualActivitytime, dbo.ShiftsForActivity(tblActivity_2.ActivityID) AS Shifts, tblActivity_2.status
 FROM     tblUser RIGHT OUTER JOIN
                   tblActivity AS tblActivity_2 ON tblUser.Useridno = tblActivity_2.StartSign LEFT OUTER JOIN
                   tblActivityType ON tblActivity_2.ActivityType = tblActivityType.ActivityTypeID LEFT OUTER JOIN

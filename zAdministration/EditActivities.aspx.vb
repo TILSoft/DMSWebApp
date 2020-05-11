@@ -1,4 +1,6 @@
 ﻿
+Imports System.Drawing
+
 Partial Class DataVisualisation_ActivitySearch
     Inherits System.Web.UI.Page
 
@@ -91,7 +93,7 @@ Partial Class DataVisualisation_ActivitySearch
             'update the end time of the pre lot with the start time of the new lot, need to update preact.postact with new activity
             actiadap.UpdateEndTimeAndPostActByActID(rowprepost.postStart, rowprepost.postID, rowprepost.PreID)
             'set postactivity preactivityid to preactivityid
-            actiadap.UpdateStartTimeandPreActID(rowprepost.postStart, rowprepost.PreID, rowprepost.postID)
+            actiadap.UpdateStartTimeAndPreActID(rowprepost.postStart, rowprepost.PreID, rowprepost.postID)
         End If
 
         ' delete target activity
@@ -176,7 +178,7 @@ Partial Class DataVisualisation_ActivitySearch
 
 
             'update the startime of the next lot with the end time of the new lot, need to update postact.preact  
-            actiadap.UpdateStartTimeandPreActID(CDate(txtend.Text), actid, rowprepost.postID)
+            actiadap.UpdateStartTimeAndPreActID(CDate(txtend.Text), actid, rowprepost.postID)
 
         End If
         GridView1.DataBind()
@@ -242,4 +244,13 @@ Partial Class DataVisualisation_ActivitySearch
     End Sub
 
 
+
+    Protected Sub GridView1_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridView1.RowDataBound
+
+        Dim status As String = e.Row.Cells(19).Text
+        If status = "Successfully extracted" Then
+            e.Row.BackColor = Color.FromName("LightGreen")
+        End If
+
+    End Sub
 End Class

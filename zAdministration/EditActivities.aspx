@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/Backend.master" AutoEventWireup="false" CodeFile="EditActivities.aspx.vb" Inherits="DataVisualisation_ActivitySearch" title="Untitled Page" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/Backend.master" AutoEventWireup="false" CodeFile="EditActivities.aspx.vb" Inherits="DataVisualisation_ActivitySearch" title="Edit Activities" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
 
@@ -164,6 +164,8 @@
                             SortExpression="endsign" />
                         <asp:BoundField DataField="EndSigntime" HeaderText="End Sign time" 
                             SortExpression="EndSigntime" />
+                        <asp:BoundField DataField="status" HeaderText="Status" 
+                            SortExpression="status" />
                     </Columns>
                 </asp:GridView>
                        
